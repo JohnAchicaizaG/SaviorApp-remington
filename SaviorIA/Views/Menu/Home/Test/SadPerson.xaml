@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SaviorIA.Views.Menu.Tests.SadPerson"
+             Title="Escala Sad Person">
+             <ScrollView>
+
+
+                <Grid HorizontalOptions="FillAndExpand" Padding="20,0,20,0" ColumnSpacing="35" RowSpacing="35">
+        
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="80" />
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="90" />
+                    </Grid.RowDefinitions>
+        
+        
+        
+                    <!-- reiniciar escala -->
+                    <Frame CornerRadius="5"
+                    HasShadow="True"
+                    BackgroundColor="White"
+                    Padding="0"
+                    HeightRequest="68"
+                    VerticalOptions="EndAndExpand" Grid.Row="0">
+                    <Button Text="REINICIAR ESCALA"
+                           BackgroundColor="{StaticResource primaryColor}"
+                           TextColor="{StaticResource secondaryColor}"
+                           FontSize="28"
+                           CornerRadius="5"
+                           FontAttributes="Bold"
+                           x:Name="OnClick"
+                           Clicked="ResetCheckboxes" 
+                           />
+                    </Frame>
+        
+        
+        
+                    <!-- Genero -->
+                    <Frame BorderColor="{StaticResource primaryColor}" CornerRadius="5" Padding="7,0,0,0" Grid.Row="1" HeightRequest="70">
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" >
+                            <!-- Sección izquierda con borde gris -->
+                            <Grid BackgroundColor="Transparent" HorizontalOptions="FillAndExpand">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                
+                                <Image ClassId="1" Source="icon_checkbox.png" x:Name="gender" VerticalOptions="Center" WidthRequest="25" HeightRequest="25">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="Choose_Tapped" />
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                
+                                <Label FontAttributes="Bold" Text="Hombre" VerticalOptions="CenterAndExpand" HorizontalOptions="Start" Margin="7,0,0,0" Grid.Column="1" TextColor="{StaticResource secondaryColor}" />
+                            </Grid>
+                            
+                            <StackLayout BackgroundColor="{StaticResource primaryColor}" HorizontalOptions="End" VerticalOptions="FillAndExpand" Padding="10" WidthRequest="60">
+                                <Frame BackgroundColor="White" CornerRadius="5">
+                                    <Label  x:Name="labelGender" Margin="2,0,0,0" Text="0" VerticalOptions="Center" HorizontalOptions="Center" TextColor="Black" FontSize="12" WidthRequest="13" HeightRequest="13" />
+                                </Frame>
+                            </StackLayout>
+                            
+                        </StackLayout>
+                    </Frame>
+                    
+                    
+        
+                   
+                    <!-- Edad -->
+                    <Frame BorderColor="{StaticResource primaryColor}" CornerRadius="5" Padding="7,0,0,0" Grid.Row="2" HeightRequest="70" >
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                            <Grid BackgroundColor="Transparent" HorizontalOptions="FillAndExpand">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                
+                                <Image ClassId="2" Source="icon_checkbox.png" x:Name="age" VerticalOptions="Center" WidthRequest="25" HeightRequest="25">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="Choose_Tapped" />
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                
+                                <Label FontAttributes="Bold" Text="Menor de 19 años o Mayor de de 45 años" LineBreakMode="WordWrap" VerticalOptions="CenterAndExpand" HorizontalOptions="Start" Margin="7,0,0,0" Padding ="0,0,20,7" Grid.Column="1" TextColor="{StaticResource secondaryColor}" />
+                            </Grid>
+                            
+                            <StackLayout BackgroundColor="{StaticResource primaryColor}" HorizontalOptions="End" VerticalOptions="FillAndExpand" Padding="10" WidthRequest="60">
+                                <Frame BackgroundColor="White" CornerRadius="5">
+                                    <Label  x:Name="labelAge" Margin="2,0,0,0" Text="0" VerticalOptions="Center" HorizontalOptions="Center" TextColor="Black" FontSize="12" WidthRequest="13" HeightRequest="13" />
+                                </Frame>
+                            </StackLayout>
+                            
+                        </StackLayout>
+                    </Frame>
+        
+        
+        
+        
+                    <!-- Depresion -->
+                    <Frame BorderColor="{StaticResource primaryColor}" CornerRadius="5" Padding="7,0,0,0" Grid.Row="3" HeightRequest="70" >
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                            <Grid BackgroundColor="Transparent" HorizontalOptions="FillAndExpand">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                
+                                <Image ClassId="3" Source="icon_checkbox.png" x:Name="depression" VerticalOptions="Center" WidthRequest="25" HeightRequest="25">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="Choose_Tapped" />
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                
+                                <Label FontAttributes="Bold" Text="Depresión" LineBreakMode="WordWrap" VerticalOptions="CenterAndExpand" HorizontalOptions="Start" Margin="7,0,0,0" Padding ="0,0,20,7" Grid.Column="1" TextColor="{StaticResource secondaryColor}" />
+                            </Grid>
+                            
+                            <StackLayout BackgroundColor="{StaticResource primaryColor}" HorizontalOptions="End" VerticalOptions="FillAndExpand" Padding="10" WidthRequest="60">
+                                <Frame BackgroundColor="White" CornerRadius="5">
+                                    <Label  x:Name="labelDepression" Margin="2,0,0,0" Text="0" VerticalOptions="Center" HorizontalOptions="Center" TextColor="Black" FontSize="12" WidthRequest="13" HeightRequest="13" />
+                                </Frame>
+                            </StackLayout>
+                            
+                        </StackLayout>
+                    </Frame>
+        
+        
+        
+        
+                    <!-- Intentos de suicidio previos -->
+                    <Frame BorderColor="{StaticResource primaryColor}" CornerRadius="5" Padding="7,0,0,0" Grid.Row="4" HeightRequest="70" >
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                            <Grid BackgroundColor="Transparent" HorizontalOptions="FillAndExpand">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                
+                                <Image ClassId="4" Source="icon_checkbox.png" x:Name="suicideAttempts" VerticalOptions="Center" WidthRequest="25" HeightRequest="25">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="Choose_Tapped" />
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                
+                                <Label FontAttributes="Bold" Text="Intentos de suicidio previos" LineBreakMode="WordWrap" VerticalOptions="CenterAndExpand" HorizontalOptions="Start" Margin="7,0,0,0" Padding ="0,0,20,7" Grid.Column="1" TextColor="{StaticResource secondaryColor}" />
+                            </Grid>
+                            
+                            <StackLayout BackgroundColor="{StaticResource primaryColor}" HorizontalOptions="End" VerticalOptions="FillAndExpand" Padding="10" WidthRequest="60">
+                                <Frame BackgroundColor="White" CornerRadius="5">
+                                    <Label  x:Name="labelSuicideAttempts" Margin="2,0,0,0" Text="0" VerticalOptions="Center" HorizontalOptions="Center" TextColor="Black" FontSize="12" WidthRequest="13" HeightRequest="13" />
+                                </Frame>
+                            </StackLayout>
+                            
+                        </StackLayout>
+                    </Frame>
+        
+        
+        
+        
+                    <!-- Abuso de alcohol -->
+                    <Frame BorderColor="{StaticResource primaryColor}" CornerRadius="5" Padding="7,0,0,0" Grid.Row="5" HeightRequest="70" >
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                            <Grid BackgroundColor="Transparent" HorizontalOptions="FillAndExpand">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                
+                                <Image ClassId="5" Source="icon_checkbox.png" x:Name="alcoholAbuse" VerticalOptions="Center" WidthRequest="25" HeightRequest="25">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="Choose_Tapped" />
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                
+                                <Label FontAttributes="Bold" Text="Abuso de alcohol" LineBreakMode="WordWrap" VerticalOptions="CenterAndExpand" HorizontalOptions="Start" Margin="7,0,0,0" Padding ="0,0,20,7" Grid.Column="1" TextColor="{StaticResource secondaryColor}" />
+                            </Grid>
+                            
+                            <StackLayout BackgroundColor="{StaticResource primaryColor}" HorizontalOptions="End" VerticalOptions="FillAndExpand" Padding="10" WidthRequest="60">
+                                <Frame BackgroundColor="White" CornerRadius="5">
+                                    <Label  x:Name="labelAlcoholAbuse" Margin="2,0,0,0" Text="0" VerticalOptions="Center" HorizontalOptions="Center" TextColor="Black" FontSize="12" WidthRequest="13" HeightRequest="13" />
+                                </Frame>
+                            </StackLayout>
+                            
+                        </StackLayout>
+                    </Frame>
+        
+        
+                    <!-- trastornos cognitivos -->
+                    <Frame BorderColor="{StaticResource primaryColor}" CornerRadius="5" Padding="7,0,0,0" Grid.Row="6" HeightRequest="70" >
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                            <Grid BackgroundColor="Transparent" HorizontalOptions="FillAndExpand">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                
+                                <Image ClassId="6" Source="icon_checkbox.png" x:Name="cognitiveDisorders" VerticalOptions="Center" WidthRequest="25" HeightRequest="25">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="Choose_Tapped" />
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                
+                                <Label FontAttributes="Bold" Text=" Asocia trastornos cognitivos (delirium, demencia, otros)" LineBreakMode="WordWrap" VerticalOptions="CenterAndExpand" HorizontalOptions="Start" Margin="7,0,0,0" Padding ="0,0,20,7" Grid.Column="1" TextColor="{StaticResource secondaryColor}" />
+                            </Grid>
+                            
+                            <StackLayout BackgroundColor="{StaticResource primaryColor}" HorizontalOptions="End" VerticalOptions="FillAndExpand" Padding="10" WidthRequest="60">
+                                <Frame BackgroundColor="White" CornerRadius="5">
+                                    <Label  x:Name="labelCognitiveDisorders" Margin="2,0,0,0" Text="0" VerticalOptions="Center" HorizontalOptions="Center" TextColor="Black" FontSize="12" WidthRequest="13" HeightRequest="13" />
+                                </Frame>
+                            </StackLayout>
+                            
+                        </StackLayout>
+                    </Frame>
+        
+        
+        
+                    <!-- Bajo soporte social -->
+                    <Frame BorderColor="{StaticResource primaryColor}" CornerRadius="5" Padding="7,0,0,0" Grid.Row="7" HeightRequest="70" >
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                            <Grid BackgroundColor="Transparent" HorizontalOptions="FillAndExpand">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                
+                                <Image ClassId="7" Source="icon_checkbox.png" x:Name="lowSocialSupport" VerticalOptions="Center" WidthRequest="25" HeightRequest="25">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="Choose_Tapped" />
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                
+                                <Label  FontAttributes="Bold" Text="Bajo soporte social" LineBreakMode="WordWrap" VerticalOptions="CenterAndExpand" HorizontalOptions="Start" Margin="7,0,0,0" Padding ="0,0,20,7" Grid.Column="1" TextColor="{StaticResource secondaryColor}" />
+                            </Grid>
+                            
+                            <StackLayout BackgroundColor="{StaticResource primaryColor}" HorizontalOptions="End" VerticalOptions="FillAndExpand" Padding="10" WidthRequest="60">
+                                <Frame BackgroundColor="White" CornerRadius="5">
+                                    <Label  x:Name="labelLowSocialSupport" Margin="2,0,0,0" Text="0" VerticalOptions="Center" HorizontalOptions="Center" TextColor="Black" FontSize="12" WidthRequest="13" HeightRequest="13" />
+                                </Frame>
+                            </StackLayout>
+                            
+                        </StackLayout>
+                    </Frame>
+        
+        
+                    <!-- Plan organizado de suicidio -->
+                    <Frame BorderColor="{StaticResource primaryColor}" CornerRadius="5" Padding="7,0,0,0" Grid.Row="8" HeightRequest="70" >
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                            <Grid BackgroundColor="Transparent" HorizontalOptions="FillAndExpand">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                
+                                <Image ClassId="8" Source="icon_checkbox.png" x:Name="organizedSuicidePlan" VerticalOptions="Center" WidthRequest="25" HeightRequest="25">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="Choose_Tapped" />
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                
+                                <Label FontAttributes="Bold" Text="Plan organizado de suicidio" LineBreakMode="WordWrap" VerticalOptions="CenterAndExpand" HorizontalOptions="Start" Margin="7,0,0,0" Padding ="0,0,20,7" Grid.Column="1" TextColor="{StaticResource secondaryColor}" />
+                            </Grid>
+                            
+                            <StackLayout BackgroundColor="{StaticResource primaryColor}" HorizontalOptions="End" VerticalOptions="FillAndExpand" Padding="10" WidthRequest="60">
+                                <Frame BackgroundColor="White" CornerRadius="5">
+                                    <Label  x:Name="labelOrganizedSuicidePlan" Margin="2,0,0,0" Text="0" VerticalOptions="Center" HorizontalOptions="Center" TextColor="Black" FontSize="12" WidthRequest="13" HeightRequest="13" />
+                                </Frame>
+                            </StackLayout>
+                            
+                        </StackLayout>
+                    </Frame>
+        
+        
+                    <!-- Sin pareja estable -->
+                    <Frame BorderColor="{StaticResource primaryColor}" CornerRadius="5" Padding="7,0,0,0" Grid.Row="9" HeightRequest="70" >
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                            <Grid BackgroundColor="Transparent" HorizontalOptions="FillAndExpand">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                
+                                <Image ClassId="9" Source="icon_checkbox.png" x:Name="withoutAStablePartner" VerticalOptions="Center" WidthRequest="25" HeightRequest="25">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="Choose_Tapped" />
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                
+                                <Label FontAttributes="Bold" Text="Sin pareja estable" LineBreakMode="WordWrap" VerticalOptions="CenterAndExpand" HorizontalOptions="Start" Margin="7,0,0,0" Padding ="0,0,20,7" Grid.Column="1" TextColor="{StaticResource secondaryColor}" />
+                            </Grid>
+                            
+                            <StackLayout BackgroundColor="{StaticResource primaryColor}" HorizontalOptions="End" VerticalOptions="FillAndExpand" Padding="10" WidthRequest="60">
+                                <Frame BackgroundColor="White" CornerRadius="5">
+                                    <Label  x:Name="labelWithoutAStablePartner" Margin="2,0,0,0" Text="0" VerticalOptions="Center" HorizontalOptions="Center" TextColor="Black" FontSize="12" WidthRequest="13" HeightRequest="13" />
+                                </Frame>
+                            </StackLayout>
+                            
+                        </StackLayout>
+                    </Frame>
+        
+        
+        
+        
+                    <!-- Enfermedad somática -->
+                    <Frame BorderColor="{StaticResource primaryColor}" CornerRadius="5" Padding="7,0,0,0" Grid.Row="10" HeightRequest="70" >
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                            <Grid BackgroundColor="Transparent" HorizontalOptions="FillAndExpand">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                
+                                <Image ClassId="10" Source="icon_checkbox.png" x:Name="somaticIllness" VerticalOptions="Center" WidthRequest="25" HeightRequest="25">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="Choose_Tapped" />
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                
+                                <Label FontAttributes="Bold" Text="Enfermedad somática" LineBreakMode="WordWrap" VerticalOptions="CenterAndExpand" HorizontalOptions="Start" Margin="7,0,0,0" Padding ="0,0,20,7" Grid.Column="1" TextColor="{StaticResource secondaryColor}" />
+                            </Grid>
+                            
+                            <StackLayout BackgroundColor="{StaticResource primaryColor}" HorizontalOptions="End" VerticalOptions="FillAndExpand" Padding="10" WidthRequest="60">
+                                <Frame BackgroundColor="White" CornerRadius="5">
+                                    <Label  x:Name="labelSomaticIllness" Margin="2,0,0,0" Text="0" VerticalOptions="Center" HorizontalOptions="Center" TextColor="Black" FontSize="12" WidthRequest="13" HeightRequest="13" />
+                                </Frame>
+                            </StackLayout>
+                            
+                        </StackLayout>
+                    </Frame>
+        
+        
+                    <!-- Resultado contador -->
+                    <Frame x:Name="resultFrame" BorderColor="{StaticResource tertaryColor}" CornerRadius="5" Padding="0" Grid.Row="11" HeightRequest="70" >
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                            <Grid BackgroundColor="{Binding ResultFrameBackgroundColor}" HorizontalOptions="FillAndExpand">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                
+                                <Image  Source="riesgos.png" VerticalOptions="Center" WidthRequest="35" HeightRequest="35" Margin="15,0,0,0">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer  />
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                
+                                <Label Text="{Binding ResultLabelText}" FontAttributes="Bold" LineBreakMode="WordWrap" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Margin="0" FontSize="Large" Grid.Column="1" TextColor="{StaticResource secondaryColor}" />
+                            </Grid>
+                            
+                            <StackLayout BackgroundColor="{StaticResource tertaryColor}" HorizontalOptions="End" VerticalOptions="FillAndExpand" Padding="10" WidthRequest="90">
+                                <Frame BackgroundColor="White" CornerRadius="5">
+                                    <Label  FontAttributes="Bold" Margin="2,0,0,0" Text="{Binding CheckboxCounter}" VerticalOptions="Center" HorizontalOptions="Center" TextColor="Black" FontSize="12" WidthRequest="18" HeightRequest="13" />
+                                </Frame>
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+        
+        
+                </Grid>
+            </ScrollView>
+</ContentPage>

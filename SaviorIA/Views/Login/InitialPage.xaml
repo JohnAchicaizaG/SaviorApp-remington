@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="SaviorIA.Views.InitialPage"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.NavBarIsVisible="False"
+    BindingContext="{Binding Source={StaticResource viewModelLocator}, Path=loginViewModel}"
+>
+
+
+    <Grid>
+        <!-- Imagen_de_fondo -->
+        <Image Source="initial_page_image.jpg"
+            Aspect="AspectFill"
+            VerticalOptions="FillAndExpand"
+            HorizontalOptions="FillAndExpand" />
+
+
+        <!-- Contenido_Pagina -->
+        <StackLayout Padding="30"
+            BackgroundColor="Transparent"
+            HorizontalOptions="Center">
+
+            <!-- labels_superior -->
+            <Label Text="&quot;El apoyo está a solo una APP de distancia&quot;"
+                FontSize="17"
+                TextColor="White"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                VerticalOptions="Start" />
+            <Label Text="SAVIOR"
+                FontSize="48"
+                HorizontalOptions="Center"
+                TextColor="White"
+                FontAttributes="Bold"
+                Margin="0, -10, 0, 10"
+                VerticalOptions="Start" />
+
+            <!-- boton iniciar -->
+            <Frame CornerRadius="5"
+                HasShadow="True"
+                BackgroundColor="White"
+                Padding="0"
+                HeightRequest="68"
+                VerticalOptions="EndAndExpand">
+                <Button Text="INICIAR"
+                    BackgroundColor="{StaticResource primaryColor}"
+                    TextColor="{StaticResource secondaryColor}"
+                    FontSize="28"
+                    CornerRadius="5"
+                    FontAttributes="Bold"
+                    Command="{Binding ToLoginCommand}"
+                    x:Name="OnClick" />
+            </Frame>
+        </StackLayout>
+    </Grid>
+</ContentPage>

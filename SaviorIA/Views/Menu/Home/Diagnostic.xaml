@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SaviorIA.Views.Menu.Diagnostic"
+             Title="Resultados">
+             <ScrollView>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25*" />
+                        <RowDefinition Height="25*" />
+                        <RowDefinition Height="25*" />
+                        <RowDefinition Height="25*" />
+                    </Grid.RowDefinitions>
+        
+                    <!-- Escala de Sad Person  -->
+                    <Frame BackgroundColor="Transparent" Margin="20" Padding="0" CornerRadius="10" HasShadow="True">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer  />
+                        </Frame.GestureRecognizers>
+                        <Grid BackgroundColor="Gray" Padding="1">
+                            <Grid Grid.Row="0" BackgroundColor="{StaticResource Primary}">
+                                <Grid VerticalOptions="CenterAndExpand">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                    
+                                    <Label Text="John Chicaiza" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TextColor="White" FontAttributes="Bold" FontSize="Title"/>
+                                    <Label Text="Formulario Savior" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TextColor="White" Grid.Row="1" FontSize="Large"/>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </Frame>
+                    
+                </Grid>
+            </ScrollView>
+</ContentPage>

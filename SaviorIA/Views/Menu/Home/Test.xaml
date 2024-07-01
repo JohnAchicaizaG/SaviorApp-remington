@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SaviorIA.Views.Menu.Test"
+             BindingContext="{Binding Source={StaticResource viewModelLocator}, Path=testViewModel}"
+             Title="Test">
+             <ScrollView>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25*" />
+                        <RowDefinition Height="25*" />
+                        <RowDefinition Height="25*" />
+                        <RowDefinition Height="25*" />
+                    </Grid.RowDefinitions>
+        
+                    <!-- Escala de Sad Person  -->
+                    <Frame BackgroundColor="Transparent" Margin="10" Padding="0" CornerRadius="10" HasShadow="True">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding GoToSadPersonCommand}" />
+                        </Frame.GestureRecognizers>
+                        <Grid BackgroundColor="Gray" Padding="1">
+                            <Grid Grid.Row="0" BackgroundColor="Transparent">
+                                <Image Source="sad_person_dos.jpg" Aspect="AspectFill" />
+                                <Grid VerticalOptions="CenterAndExpand">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                    
+                                    <Label Text="SAD PERSON" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TextColor="White" FontAttributes="Bold" />
+                                    <Label Text="Escala" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TextColor="{StaticResource primaryColor}" Grid.Row="1" />
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </Frame>
+                    
+                    
+                    <!-- Segundo Frame -->
+                    <Frame BackgroundColor="Transparent" Margin="10" Padding="0" CornerRadius="10" HasShadow="True" Grid.Row="1">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer  />
+                        </Frame.GestureRecognizers>
+                        <Grid BackgroundColor="Gray" Padding="1">
+                            <Grid Grid.Row="0" BackgroundColor="Transparent">
+                                <Image Source="columbia.jpg" Aspect="AspectFill" />
+                                <Grid VerticalOptions="CenterAndExpand">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Label Text="COLUMBIA" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TextColor="White" FontAttributes="Bold" />
+                                    <Label Text="Escala" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TextColor="{StaticResource primaryColor}" Grid.Row="1" />
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </Frame>
+        
+                 
+                    <!-- Tercer Frame -->
+                    <Frame BackgroundColor="Transparent" Margin="10" Padding="0" CornerRadius="10" HasShadow="True" Grid.Row="2">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer  />
+                        </Frame.GestureRecognizers>
+                        <Grid BackgroundColor="Gray" Padding="1">
+                            <Grid Grid.Row="0" BackgroundColor="Transparent">
+                                <Image Source="hamilton.jpg" Aspect="AspectFill" />
+                                <Grid VerticalOptions="CenterAndExpand">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Label Text="HAMILTON" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TextColor="White" FontAttributes="Bold" />
+                                    <Label Text="Escala" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TextColor="{StaticResource primaryColor}" Grid.Row="1" />
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </Frame>
+        
+                    <!-- Cuarto Frame -->
+                    <Frame BackgroundColor="Transparent" Margin="10" Padding="0" CornerRadius="10" HasShadow="True" Grid.Row="3">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding GoToBeckCommand}" />
+                        </Frame.GestureRecognizers>
+                        <Grid BackgroundColor="Gray" Padding="1">
+                            <Grid Grid.Row="0" BackgroundColor="Transparent">
+                                <Image Source="beck_scale.jpg" Aspect="AspectFill" />
+                                <Grid VerticalOptions="CenterAndExpand">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Label Text="BECK" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TextColor="White" FontAttributes="Bold" />
+                                    <Label Text="Invenatario" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TextColor="{StaticResource primaryColor}" Grid.Row="1" />
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </Frame>
+                </Grid>
+            </ScrollView>
+</ContentPage>

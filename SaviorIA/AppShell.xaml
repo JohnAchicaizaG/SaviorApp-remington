@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="SaviorIA.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:SaviorIA"
+    xmlns:login="clr-namespace:SaviorIA.Views"
+    xmlns:menu="clr-namespace:SaviorIA.Views.Menu"
+    BackgroundColor="{StaticResource tertaryColor}"
+    ForegroundColor="Black"
+    Shell.TitleColor="Black">
+
+    <ShellContent FlyoutItemIsVisible="False" ContentTemplate="{DataTemplate login:InitialPage}" Route="InitialPage" ></ShellContent>
+    <ShellContent FlyoutItemIsVisible="False" ContentTemplate="{DataTemplate login:Login}" Route="Login" ></ShellContent>
+
+    
+    <TabBar >
+        <ShellContent Icon="icon_house.png"
+            Title="Home"
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="MainPage"
+        />
+        <ShellContent Icon="icon_settings_menu.png"
+        ContentTemplate="{DataTemplate menu:Configuration}"
+            Title="Perfil"
+            Route="Parametros"
+        />
+    </TabBar>
+
+</Shell>

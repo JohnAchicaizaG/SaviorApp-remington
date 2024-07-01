@@ -1,0 +1,77 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="SaviorIA.Views.About"
+    Title="Acerca de Savior">
+    <ScrollView>
+        <StackLayout Padding="20">
+
+            <!-- Título -->
+            <Label Text="Acerca de SAVIORIA"
+                FontSize="Large"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                Margin="0,20,0,10" />
+
+            <!-- Contenido -->
+            <Label
+                Text="SAVIORIA es un sistema innovador diseñado para la prevención del suicidio, desarrollado con el objetivo principal de mejorar la detección temprana y la intervención eficaz en situaciones de riesgo suicida. El nombre SAVIOR (Sistema Avanzado de Vigilancia Inteligente y Optimización de Respuestas) refleja nuestro compromiso con la utilización de la inteligencia artificial para abordar este desafío de relevancia mundial."
+                FontSize="Medium"
+                HorizontalOptions="FillAndExpand"
+                Margin="0,0,0,20" />
+
+            <!-- Objetivos específicos -->
+            <Label Text="Objetivos de SAVIORIA:"
+                FontSize="Medium"
+                FontAttributes="Bold"
+                Margin="0,10,0,5" />
+
+            <Label Text="1. Revisión de la literatura científica:"
+                FontSize="Medium"
+                FontAttributes="Bold"
+                Margin="0,5,0,0" />
+
+            <Label
+                Text="   - Investigamos la aplicación de la inteligencia artificial en la prevención del suicidio, evaluando su eficacia y explorando los desafíos y oportunidades asociados."
+                FontSize="Medium"
+                Margin="0,0,0,5" />
+
+            <Label Text="2. Diseño y desarrollo de la aplicación:"
+                FontSize="Medium"
+                FontAttributes="Bold"
+                Margin="0,10,0,0" />
+
+            <Label
+                Text="   - Colaboramos con expertos en salud mental para definir los requisitos y desarrollar una aplicación que capture indicadores emocionales y conductuales relevantes."
+                FontSize="Medium"
+                Margin="0,0,0,5" />
+
+            <Label
+                Text="   - Implementamos algoritmos de inteligencia artificial para analizar respuestas y asignar niveles de riesgo, permitiendo a los usuarios conocer su nivel de riesgo y tomar medidas preventivas."
+                FontSize="Medium"
+                Margin="0,0,0,5" />
+
+            <Label Text="3. Evaluación de la eficacia y usabilidad:"
+                FontSize="Medium"
+                FontAttributes="Bold"
+                Margin="0,10,0,0" />
+
+            <Label
+                Text="   - Realizamos un estudio piloto para evaluar la eficacia de SAVIORIA en la detección del riesgo de suicidio y su usabilidad por parte de los usuarios."
+                FontSize="Medium"
+                Margin="0,0,0,15" />
+
+            <!-- Versión de la aplicación -->
+            <Label Text="Versión 1.0"
+                Margin="0,0,0,5"
+                FontSize="Small"
+                HorizontalOptions="Center" />
+
+            <!-- Enlace de contacto -->
+            <Label Text="jachicaiza@outlook.com"
+                FontSize="Small"
+                HorizontalOptions="Center"
+            />
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

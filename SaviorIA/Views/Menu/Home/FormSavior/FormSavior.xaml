@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Savior.Views.FormSavior.FormSavior"
+    BindingContext="{Binding Source={StaticResource viewModelLocator}, Path=formIaViewModel}"
+    Title="Formulario con IA">
+
+
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="{StaticResource primaryColor}" Offset="0" />
+            <GradientStop Color="#fbf5c9" Offset="1" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <VerticalStackLayout>
+                <Grid>
+                    <Grid.Margin>
+                        <OnPlatform x:TypeArguments="Thickness">
+                            <On Platform="Android"
+                                Value="0,20,0,0" />
+                            <On Platform="iOS"
+                                Value="0,0,0,0" />
+                        </OnPlatform>
+                    </Grid.Margin>
+                    <Image Source="menu_headd.png"
+                        VerticalOptions="Fill"
+                        Aspect="Center"
+                        Margin="0,0,0,0"
+                    />
+                    <Grid RowDefinitions="*,*,*,*,*,auto,auto">
+
+                        <Grid Grid.Row="1"
+                            RowDefinitions="10*,10*,10*,10*,10*,10*,10*,10*,10*,10*,10*,10*,10*,10*,10*,10*,10*,10*,10*,10*,10*,10*,10*,10*,50*,10*,50*,10*"
+                            Margin="25,0,25,0">
+                            <Label Text="FORMULARIO SAVIOR"
+                                Grid.Row="0"
+                                FontSize="Small"
+                                TextColor="{StaticResource secondaryColor}" />
+                            <Label Text="INTELIGENCIA ARTIFICIAL"
+                                Grid.Row="1"
+                                Margin="0,0,0,0"
+                                Style="{StaticResource TitleForms}" />
+                            <Label Text="Selección de Preguntas"
+                                Grid.Row="2"
+                                Margin="0,0,0,10"
+                                Style="{StaticResource SubtitleForms}" />
+                            <Grid Grid.Row="3">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                            </Grid>
+
+
+                            <!-- Primer Pregunta -->
+                            <Label
+                                Text="1. ¿Ha cambiado sus hábitos de sueño o alimentación? (Dormir mucho o poco, comer en exceso o dejar de comer)	"
+                                Grid.Row="4" FontSize="Small"
+                                Margin="0,20,0,10" TextColor="{StaticResource secondaryColor}"></Label>
+
+                            <Frame Grid.Row="5" BackgroundColor="#f2f2f2" Padding="0"
+                                CornerRadius="5" HorizontalOptions="FillAndExpand" HasShadow="True"
+                                HeightRequest="60" IsClippedToBounds="True">
+
+                                <StackLayout Orientation="Horizontal" Padding="0" Margin="0">
+
+                                    <Frame BackgroundColor="White" BorderColor="Transparent"
+                                        WidthRequest="60" HeightRequest="60"
+                                        HorizontalOptions="Start">
+                                        <Image Source="icon_numeral.png"></Image>
+                                    </Frame>
+
+                                    <Picker Grid.Column="1"
+                                        Title="Escoge una opcion"
+                                        VerticalOptions="CenterAndExpand"
+                                        HorizontalOptions="FillAndExpand"
+                                        Margin="10,0,10,0"
+                                        SelectedItem="{Binding PreguntaUno}">
+                                        <Picker.ItemsSource>
+                                            <x:Array Type="{x:Type x:String}">
+                                                <x:String>Nunca</x:String>
+                                                <x:String>Rara vez</x:String>
+                                                <x:String>A veces</x:String>
+                                                <x:String>Frecuentemente</x:String>
+                                                <x:String>Siempre</x:String>
+                                            </x:Array>
+                                        </Picker.ItemsSource>
+                                    </Picker>
+                                </StackLayout>
+                            </Frame>
+
+                            <!-- Segunda Pregunta -->
+                            <Label Text="2. ¿Ha descuidado su higiene personal o su apariencia física?" Grid.Row="6"
+                                FontSize="Small" Margin="0,20,0,10"
+                                TextColor="{StaticResource secondaryColor}"></Label>
+
+                            <Frame Grid.Row="7" BackgroundColor="#f2f2f2" Padding="0"
+                                CornerRadius="5" HorizontalOptions="FillAndExpand" HasShadow="True"
+                                HeightRequest="60" IsClippedToBounds="True">
+
+                                <StackLayout Orientation="Horizontal" Padding="0" Margin="0">
+
+                                    <Frame BackgroundColor="White" BorderColor="Transparent"
+                                        WidthRequest="60" HeightRequest="60"
+                                        HorizontalOptions="Start">
+                                        <Image Source="icon_numeral.png"></Image>
+                                    </Frame>
+
+                                    <Picker Grid.Column="1"
+                                        Title="Escoge una opcion"
+                                        VerticalOptions="CenterAndExpand"
+                                        HorizontalOptions="FillAndExpand"
+                                        Margin="10,0,10,0"
+                                        SelectedItem="{Binding PreguntaDos}">
+                                        <Picker.ItemsSource>
+                                            <x:Array Type="{x:Type x:String}">
+                                                <x:String>Nunca</x:String>
+                                                <x:String>Rara vez</x:String>
+                                                <x:String>A veces</x:String>
+                                                <x:String>Frecuentemente</x:String>
+                                                <x:String>Siempre</x:String>
+                                            </x:Array>
+                                        </Picker.ItemsSource>
+                                    </Picker>
+                                </StackLayout>
+                            </Frame>
+
+
+                            <!-- Tercer Pregunta -->
+                            <Label Text="3. ¿Ha perdido interés en actividades que antes disfrutaba?"
+                                Grid.Row="8"
+                                FontSize="Small" Margin="0,20,0,10"
+                                TextColor="{StaticResource secondaryColor}"></Label>
+
+                            <Frame Grid.Row="9" BackgroundColor="#f2f2f2" Padding="0"
+                                CornerRadius="5" HorizontalOptions="FillAndExpand" HasShadow="True"
+                                HeightRequest="60" IsClippedToBounds="True">
+
+                                <StackLayout Orientation="Horizontal" Padding="0" Margin="0">
+
+                                    <Frame BackgroundColor="White" BorderColor="Transparent"
+                                        WidthRequest="60" HeightRequest="60"
+                                        HorizontalOptions="Start">
+                                        <Image Source="icon_numeral.png"></Image>
+                                    </Frame>
+
+                                    <Picker Grid.Column="1"
+                                        Title="Escoge una opcion"
+                                        VerticalOptions="CenterAndExpand"
+                                        HorizontalOptions="FillAndExpand"
+                                        Margin="10,0,10,0"
+                                        SelectedItem="{Binding PreguntaTres}">
+                                        <Picker.ItemsSource>
+                                            <x:Array Type="{x:Type x:String}">
+                                                <x:String>Nunca</x:String>
+                                                <x:String>Rara vez</x:String>
+                                                <x:String>A veces</x:String>
+                                                <x:String>Frecuentemente</x:String>
+                                                <x:String>Siempre</x:String>
+                                            </x:Array>
+                                        </Picker.ItemsSource>
+                                    </Picker>
+                                </StackLayout>
+                            </Frame>
+
+
+                            <!-- Cuarta Pregunta -->
+                            <Label Text="4. ¿Se ha aislado de amigos y familiares?	" Grid.Row="10"
+                                FontSize="Small" Margin="0,20,0,10"
+                                TextColor="{StaticResource secondaryColor}"></Label>
+
+                            <Frame Grid.Row="11" BackgroundColor="#f2f2f2" Padding="0"
+                                CornerRadius="5" HorizontalOptions="FillAndExpand" HasShadow="True"
+                                HeightRequest="60" IsClippedToBounds="True">
+
+                                <StackLayout Orientation="Horizontal" Padding="0" Margin="0">
+
+                                    <Frame BackgroundColor="White" BorderColor="Transparent"
+                                        WidthRequest="60" HeightRequest="60"
+                                        HorizontalOptions="Start">
+                                        <Image Source="icon_numeral.png"></Image>
+                                    </Frame>
+
+                                    <Picker Grid.Column="1"
+                                        Title="Escoge una opcion"
+                                        VerticalOptions="CenterAndExpand"
+                                        HorizontalOptions="FillAndExpand"
+                                        Margin="10,0,10,0"
+                                        SelectedItem="{Binding PreguntaCuatro}">
+                                        <Picker.ItemsSource>
+                                            <x:Array Type="{x:Type x:String}">
+                                                <x:String>Nunca</x:String>
+                                                <x:String>Rara vez</x:String>
+                                                <x:String>A veces</x:String>
+                                                <x:String>Frecuentemente</x:String>
+                                                <x:String>Siempre</x:String>
+                                            </x:Array>
+                                        </Picker.ItemsSource>
+                                    </Picker>
+                                </StackLayout>
+                            </Frame>
+
+
+                            <!-- Quinta Pregunta -->
+                            <Label
+                                Text="5. ¿Ha comenzado a consumir drogas o alcohol en exceso?	"
+                                Grid.Row="12"
+                                FontSize="Small" Margin="0,20,0,10"
+                                TextColor="{StaticResource secondaryColor}"></Label>
+
+                            <Frame Grid.Row="13" BackgroundColor="#f2f2f2" Padding="0"
+                                CornerRadius="5" HorizontalOptions="FillAndExpand" HasShadow="True"
+                                HeightRequest="60" IsClippedToBounds="True">
+
+                                <StackLayout Orientation="Horizontal" Padding="0" Margin="0">
+
+                                    <Frame BackgroundColor="White" BorderColor="Transparent"
+                                        WidthRequest="60" HeightRequest="60"
+                                        HorizontalOptions="Start">
+                                        <Image Source="icon_numeral.png"></Image>
+                                    </Frame>
+
+                                    <Picker Grid.Column="1"
+                                        Title="Escoge una opcion"
+                                        VerticalOptions="CenterAndExpand"
+                                        HorizontalOptions="FillAndExpand"
+                                        Margin="10,0,10,0"
+                                        SelectedItem="{Binding PreguntaCinco}">
+                                        <Picker.ItemsSource>
+                                            <x:Array Type="{x:Type x:String}">
+                                                <x:String>Nunca</x:String>
+                                                <x:String>Rara vez</x:String>
+                                                <x:String>A veces</x:String>
+                                                <x:String>Frecuentemente</x:String>
+                                                <x:String>Siempre</x:String>
+                                            </x:Array>
+                                        </Picker.ItemsSource>
+                                    </Picker>
+                                </StackLayout>
+                            </Frame>
+
+
+                            <!-- Quinta Pregunta -->
+                            <Label Text="6. ¿Ha expresado sentimientos de desesperanza o tristeza profunda?	"
+                                Grid.Row="14"
+                                FontSize="Small" Margin="0,20,0,10"
+                                TextColor="{StaticResource secondaryColor}"></Label>
+
+                            <Frame Grid.Row="15" BackgroundColor="#f2f2f2" Padding="0"
+                                CornerRadius="5" HorizontalOptions="FillAndExpand" HasShadow="True"
+                                HeightRequest="60" IsClippedToBounds="True">
+
+                                <StackLayout Orientation="Horizontal" Padding="0" Margin="0">
+
+                                    <Frame BackgroundColor="White" BorderColor="Transparent"
+                                        WidthRequest="60" HeightRequest="60"
+                                        HorizontalOptions="Start">
+                                        <Image Source="icon_numeral.png"></Image>
+                                    </Frame>
+
+                                    <Picker Grid.Column="1"
+                                        Title="Escoge una opcion"
+                                        VerticalOptions="CenterAndExpand"
+                                        HorizontalOptions="FillAndExpand"
+                                        Margin="10,0,10,0"
+                                        SelectedItem="{Binding PreguntaSeis}">
+                                        <Picker.ItemsSource>
+                                            <x:Array Type="{x:Type x:String}">
+                                                <x:String>Nunca</x:String>
+                                                <x:String>Rara vez</x:String>
+                                                <x:String>A veces</x:String>
+                                                <x:String>Frecuentemente</x:String>
+                                                <x:String>Siempre</x:String>
+                                            </x:Array>
+                                        </Picker.ItemsSource>
+                                    </Picker>
+                                </StackLayout>
+                            </Frame>
+
+
+                            <!-- Sexta Pregunta -->
+                            <Label Text="7. ¿Ha hablado o escrito sobre la muerte o el suicidio?" Grid.Row="16"
+                                FontSize="Small" Margin="0,20,0,10"
+                                TextColor="{StaticResource secondaryColor}"></Label>
+
+                            <Frame Grid.Row="17" BackgroundColor="#f2f2f2" Padding="0"
+                                CornerRadius="5" HorizontalOptions="FillAndExpand" HasShadow="True"
+                                HeightRequest="60" IsClippedToBounds="True">
+
+                                <StackLayout Orientation="Horizontal" Padding="0" Margin="0">
+
+                                    <Frame BackgroundColor="White" BorderColor="Transparent"
+                                        WidthRequest="60" HeightRequest="60"
+                                        HorizontalOptions="Start">
+                                        <Image Source="icon_numeral.png"></Image>
+                                    </Frame>
+
+                                    <Picker Grid.Column="1"
+                                        Title="Escoge una opcion"
+                                        VerticalOptions="CenterAndExpand"
+                                        HorizontalOptions="FillAndExpand"
+                                        Margin="10,0,10,0"
+                                        SelectedItem="{Binding PreguntaSiete}">
+                                        <Picker.ItemsSource>
+                                            <x:Array Type="{x:Type x:String}">
+                                                <x:String>Nunca</x:String>
+                                                <x:String>Rara vez</x:String>
+                                                <x:String>A veces</x:String>
+                                                <x:String>Frecuentemente</x:String>
+                                                <x:String>Siempre</x:String>
+                                            </x:Array>
+                                        </Picker.ItemsSource>
+                                    </Picker>
+                                </StackLayout>
+                            </Frame>
+
+
+                            <!-- Septima Pregunta -->
+                            <Label
+                                Text="8. ¿Ha regalado o tirado pertenencias importantes sin razón aparente?	"
+                                Grid.Row="18"
+                                FontSize="Small" Margin="0,20,0,10"
+                                TextColor="{StaticResource secondaryColor}"></Label>
+
+                            <Frame Grid.Row="19" BackgroundColor="#f2f2f2" Padding="0"
+                                CornerRadius="5" HorizontalOptions="FillAndExpand" HasShadow="True"
+                                HeightRequest="60" IsClippedToBounds="True">
+
+                                <StackLayout Orientation="Horizontal" Padding="0" Margin="0">
+
+                                    <Frame BackgroundColor="White" BorderColor="Transparent"
+                                        WidthRequest="60" HeightRequest="60"
+                                        HorizontalOptions="Start">
+                                        <Image Source="icon_numeral.png"></Image>
+                                    </Frame>
+
+                                    <Picker Grid.Column="1"
+                                        Title="Escoge una opcion"
+                                        VerticalOptions="CenterAndExpand"
+                                        HorizontalOptions="FillAndExpand"
+                                        Margin="10,0,10,0"
+                                        SelectedItem="{Binding PreguntaOcho}">
+                                        <Picker.ItemsSource>
+                                            <x:Array Type="{x:Type x:String}">
+                                                <x:String>Nunca</x:String>
+                                                <x:String>Rara vez</x:String>
+                                                <x:String>A veces</x:String>
+                                                <x:String>Frecuentemente</x:String>
+                                                <x:String>Siempre</x:String>
+                                            </x:Array>
+                                        </Picker.ItemsSource>
+                                    </Picker>
+                                </StackLayout>
+                            </Frame>
+
+
+                            <!-- Novena Pregunta -->
+                            <Label Text="9. ¿Ha realizado planes para su propio funeral o muerte?	"
+                                Grid.Row="20"
+                                FontSize="Small" Margin="0,20,0,10"
+                                TextColor="{StaticResource secondaryColor}"></Label>
+
+                            <Frame Grid.Row="21" BackgroundColor="#f2f2f2" Padding="0"
+                                CornerRadius="5" HorizontalOptions="FillAndExpand" HasShadow="True"
+                                HeightRequest="60" IsClippedToBounds="True">
+
+                                <StackLayout Orientation="Horizontal" Padding="0" Margin="0">
+
+                                    <Frame BackgroundColor="White" BorderColor="Transparent"
+                                        WidthRequest="60" HeightRequest="60"
+                                        HorizontalOptions="Start">
+                                        <Image Source="icon_numeral.png"></Image>
+                                    </Frame>
+
+                                    <Picker Grid.Column="1"
+                                        Title="Escoge una opcion"
+                                        VerticalOptions="CenterAndExpand"
+                                        HorizontalOptions="FillAndExpand"
+                                        Margin="10,0,10,0"
+                                        SelectedItem="{Binding PreguntaNueve}">
+                                        <Picker.ItemsSource>
+                                            <x:Array Type="{x:Type x:String}">
+                                                <x:String>Nunca</x:String>
+                                                <x:String>Rara vez</x:String>
+                                                <x:String>A veces</x:String>
+                                                <x:String>Frecuentemente</x:String>
+                                                <x:String>Siempre</x:String>
+                                            </x:Array>
+                                        </Picker.ItemsSource>
+                                    </Picker>
+                                </StackLayout>
+                            </Frame>
+
+
+
+                            <!-- Novena Pregunta -->
+                            <Label Text="10. ¿Se ha mostrado irritable o agresivo sin motivo aparente? "
+                                Grid.Row="22"
+                                FontSize="Small" Margin="0,20,0,10"
+                                TextColor="{StaticResource secondaryColor}"></Label>
+
+                            <Frame Grid.Row="23" BackgroundColor="#f2f2f2" Padding="0"
+                                CornerRadius="5" HorizontalOptions="FillAndExpand" HasShadow="True"
+                                HeightRequest="60" IsClippedToBounds="True">
+
+                                <StackLayout Orientation="Horizontal" Padding="0" Margin="0">
+
+                                    <Frame BackgroundColor="White" BorderColor="Transparent"
+                                        WidthRequest="60" HeightRequest="60"
+                                        HorizontalOptions="Start">
+                                        <Image Source="icon_numeral.png"></Image>
+                                    </Frame>
+
+                                    <Picker Grid.Column="1"
+                                        Title="Escoge una opcion"
+                                        VerticalOptions="CenterAndExpand"
+                                        HorizontalOptions="FillAndExpand"
+                                        Margin="10,0,10,0"
+                                        SelectedItem="{Binding PreguntaDiez}">
+                                        <Picker.ItemsSource>
+                                            <x:Array Type="{x:Type x:String}">
+                                                <x:String>Nunca</x:String>
+                                                <x:String>Rara vez</x:String>
+                                                <x:String>A veces</x:String>
+                                                <x:String>Frecuentemente</x:String>
+                                                <x:String>Siempre</x:String>
+                                            </x:Array>
+                                        </Picker.ItemsSource>
+                                    </Picker>
+                                </StackLayout>
+                            </Frame>
+
+
+
+                             <!-- Novena Pregunta -->
+                             <Label Text="11. ¿Ha tenido pensamientos o comportamientos impulsivos o autodestructivos?  "
+                             Grid.Row="24"
+                             FontSize="Small" Margin="0,20,0,10"
+                             TextColor="{StaticResource secondaryColor}"></Label>
+
+                         <Frame Grid.Row="25" BackgroundColor="#f2f2f2" Padding="0"
+                             CornerRadius="5" HorizontalOptions="FillAndExpand" HasShadow="True"
+                             HeightRequest="60" IsClippedToBounds="True">
+
+                             <StackLayout Orientation="Horizontal" Padding="0" Margin="0">
+
+                                 <Frame BackgroundColor="White" BorderColor="Transparent"
+                                     WidthRequest="60" HeightRequest="60"
+                                     HorizontalOptions="Start">
+                                     <Image Source="icon_numeral.png"></Image>
+                                 </Frame>
+
+                                 <Picker Grid.Column="1"
+                                     Title="Escoge una opcion"
+                                     VerticalOptions="CenterAndExpand"
+                                     HorizontalOptions="FillAndExpand"
+                                     Margin="10,0,10,0"
+                                     SelectedItem="{Binding PreguntaOnce}">
+                                     <Picker.ItemsSource>
+                                         <x:Array Type="{x:Type x:String}">
+                                             <x:String>Nunca</x:String>
+                                             <x:String>Rara vez</x:String>
+                                             <x:String>A veces</x:String>
+                                             <x:String>Frecuentemente</x:String>
+                                             <x:String>Siempre</x:String>
+                                         </x:Array>
+                                     </Picker.ItemsSource>
+                                 </Picker>
+                             </StackLayout>
+                         </Frame>
+
+                        </Grid>
+                        <!-- Boton Paso de seccion -->
+                        <Grid Grid.Row="2"
+                            BackgroundColor="Transparent"
+                            Padding="0"
+                            Margin="25,25,25,15"
+                            RowDefinitions="*,*">
+
+                            <Frame CornerRadius="10" HasShadow="True" Padding="0" Grid.RowSpan="2">
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer />
+                                </Frame.GestureRecognizers>
+                                <Grid>
+
+                                    <!-- Imagen de fondo -->
+                                    <Image Source="secondary_button_next.png" Aspect="AspectFill">
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding SendCommand}"></TapGestureRecognizer>
+                                        </Image.GestureRecognizers>
+                                    </Image>
+
+                                    <!-- Contenido sobre la imagen -->
+                                    <StackLayout VerticalOptions="CenterAndExpand"
+                                        HorizontalOptions="Start" Margin="5,0,0,0">
+                                        <Label Text="Finalizar y Enviar"
+                                            TextColor="White"
+                                            FontSize="Small"
+                                            Margin="10,2,0,0"
+                                            VerticalTextAlignment="Center"
+                                            HorizontalTextAlignment="Start"
+                                        />
+                                        <Label Text="SaviorIA"
+                                            TextColor="{StaticResource primaryColor}"
+                                            Margin="10,0,0,0"
+                                            FontSize="Small"
+                                            VerticalTextAlignment="Start"
+                                            HorizontalTextAlignment="Start"
+                                        />
+                                    </StackLayout>
+                                </Grid>
+                            </Frame>
+
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </VerticalStackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,119 @@
+is_global = true
+build_property.TargetFramework = net7.0-ios
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = SaviorIA
+build_property.ProjectDir = /Users/jachg/Desktop/SAVIORIA/SaviorIA/
+
+[/Users/jachg/Desktop/SAVIORIA/SaviorIA/App.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = SaviorIA.App.xaml
+build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.RelativePath = App.xaml
+
+[/Users/jachg/Desktop/SAVIORIA/SaviorIA/AppShell.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = SaviorIA.AppShell.xaml
+build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
+build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
+
+[/Users/jachg/Desktop/SAVIORIA/SaviorIA/MainPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = SaviorIA.MainPage.xaml
+build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
+build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
+
+[/Users/jachg/Desktop/SAVIORIA/SaviorIA/Resources/Styles/Colors.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = SaviorIA.Resources.Styles.Colors.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources/Styles/Colors.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources/Styles/Colors.xaml
+
+[/Users/jachg/Desktop/SAVIORIA/SaviorIA/Resources/Styles/Styles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = SaviorIA.Resources.Styles.Styles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources/Styles/Styles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources/Styles/Styles.xaml
+
+[/Users/jachg/Desktop/SAVIORIA/SaviorIA/Views/Configurations/About/About.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = SaviorIA.Views.Configurations.About.About.xaml
+build_metadata.AdditionalFiles.TargetPath = Views/Configurations/About/About.xaml
+build_metadata.AdditionalFiles.RelativePath = Views/Configurations/About/About.xaml
+
+[/Users/jachg/Desktop/SAVIORIA/SaviorIA/Views/Configurations/GeneralAdjustments/GeneralAdjustments.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = SaviorIA.Views.Configurations.GeneralAdjustments.GeneralAdjustments.xaml
+build_metadata.AdditionalFiles.TargetPath = Views/Configurations/GeneralAdjustments/GeneralAdjustments.xaml
+build_metadata.AdditionalFiles.RelativePath = Views/Configurations/GeneralAdjustments/GeneralAdjustments.xaml
+
+[/Users/jachg/Desktop/SAVIORIA/SaviorIA/Views/Login/InitialPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = SaviorIA.Views.Login.InitialPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views/Login/InitialPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views/Login/InitialPage.xaml
+
+[/Users/jachg/Desktop/SAVIORIA/SaviorIA/Views/Login/Login.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = SaviorIA.Views.Login.Login.xaml
+build_metadata.AdditionalFiles.TargetPath = Views/Login/Login.xaml
+build_metadata.AdditionalFiles.RelativePath = Views/Login/Login.xaml
+
+[/Users/jachg/Desktop/SAVIORIA/SaviorIA/Views/Menu/Configuration/Configuration.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = SaviorIA.Views.Menu.Configuration.Configuration.xaml
+build_metadata.AdditionalFiles.TargetPath = Views/Menu/Configuration/Configuration.xaml
+build_metadata.AdditionalFiles.RelativePath = Views/Menu/Configuration/Configuration.xaml
+
+[/Users/jachg/Desktop/SAVIORIA/SaviorIA/Views/Menu/Estrategy/Estrategy.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = SaviorIA.Views.Menu.Estrategy.Estrategy.xaml
+build_metadata.AdditionalFiles.TargetPath = Views/Menu/Estrategy/Estrategy.xaml
+build_metadata.AdditionalFiles.RelativePath = Views/Menu/Estrategy/Estrategy.xaml
+
+[/Users/jachg/Desktop/SAVIORIA/SaviorIA/Views/Menu/Home/Diagnostic.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = SaviorIA.Views.Menu.Home.Diagnostic.xaml
+build_metadata.AdditionalFiles.TargetPath = Views/Menu/Home/Diagnostic.xaml
+build_metadata.AdditionalFiles.RelativePath = Views/Menu/Home/Diagnostic.xaml
+
+[/Users/jachg/Desktop/SAVIORIA/SaviorIA/Views/Menu/Home/FormSavior/FormSavior.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = SaviorIA.Views.Menu.Home.FormSavior.FormSavior.xaml
+build_metadata.AdditionalFiles.TargetPath = Views/Menu/Home/FormSavior/FormSavior.xaml
+build_metadata.AdditionalFiles.RelativePath = Views/Menu/Home/FormSavior/FormSavior.xaml
+
+[/Users/jachg/Desktop/SAVIORIA/SaviorIA/Views/Menu/Home/Register.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = SaviorIA.Views.Menu.Home.Register.xaml
+build_metadata.AdditionalFiles.TargetPath = Views/Menu/Home/Register.xaml
+build_metadata.AdditionalFiles.RelativePath = Views/Menu/Home/Register.xaml
+
+[/Users/jachg/Desktop/SAVIORIA/SaviorIA/Views/Menu/Home/respuestaIa.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = SaviorIA.Views.Menu.Home.respuestaIa.xaml
+build_metadata.AdditionalFiles.TargetPath = Views/Menu/Home/respuestaIa.xaml
+build_metadata.AdditionalFiles.RelativePath = Views/Menu/Home/respuestaIa.xaml
+
+[/Users/jachg/Desktop/SAVIORIA/SaviorIA/Views/Menu/Home/Test.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = SaviorIA.Views.Menu.Home.Test.xaml
+build_metadata.AdditionalFiles.TargetPath = Views/Menu/Home/Test.xaml
+build_metadata.AdditionalFiles.RelativePath = Views/Menu/Home/Test.xaml
+
+[/Users/jachg/Desktop/SAVIORIA/SaviorIA/Views/Menu/Home/Test/Beck.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = SaviorIA.Views.Menu.Home.Test.Beck.xaml
+build_metadata.AdditionalFiles.TargetPath = Views/Menu/Home/Test/Beck.xaml
+build_metadata.AdditionalFiles.RelativePath = Views/Menu/Home/Test/Beck.xaml
+
+[/Users/jachg/Desktop/SAVIORIA/SaviorIA/Views/Menu/Home/Test/SadPerson.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = SaviorIA.Views.Menu.Home.Test.SadPerson.xaml
+build_metadata.AdditionalFiles.TargetPath = Views/Menu/Home/Test/SadPerson.xaml
+build_metadata.AdditionalFiles.RelativePath = Views/Menu/Home/Test/SadPerson.xaml

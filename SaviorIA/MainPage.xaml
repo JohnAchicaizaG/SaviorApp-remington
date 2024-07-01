@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BindingContext="{Binding Source={StaticResource viewModelLocator}, Path=mainMenuViewModel}"
+    NavigationPage.HasNavigationBar="false"
+    Shell.NavBarIsVisible="False"
+    x:Class="SaviorIA.MainPage">
+
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="{StaticResource primaryColor}" Offset="0" />
+            <GradientStop Color="#fbf5c9" Offset="1" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+    <ScrollView>
+        <Grid>
+
+            <Grid>
+                <!-- Se definen las filas -->
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10*" />
+                    <RowDefinition Height="28*" />
+                    <RowDefinition Height="60*" />
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0"
+                    Margin="20,5,0,5">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Icono, Avatar, usuario (icono redondo) -->
+                    <Frame WidthRequest="50"
+                        HeightRequest="50"
+                        CornerRadius="25"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center">
+                        <Image Aspect="AspectFill"
+                            WidthRequest="50"
+                            HeightRequest="50"
+                            Source="avatar.png" />
+                    </Frame>
+
+                    <!-- Texto ("Bienvenido") -->
+                    <Grid Grid.Column="1">
+                        <StackLayout Orientation="Vertical"
+                            HorizontalOptions="Start"
+                            VerticalOptions="CenterAndExpand"
+                            Margin="10,0,0,0">
+                            <Label Text="Bienvenido"
+                                TextColor="{StaticResource secondaryColor}" />
+                            <Label x:Name="nombreUsuario"
+                                Text="John Chicaiza"
+                                TextColor="{StaticResource secondaryColor}"
+                                FontAttributes="Bold"
+                                FontFamily="Raleway-SemiBold.ttf#Raleway"
+                                FontSize="20" />
+                            <Label x:Name="rol"
+                                IsVisible="false"
+                                FontSize="Micro"
+                                TextColor="white" />
+                        </StackLayout>
+                    </Grid>
+                </Grid>
+
+                <!-- Contenido Frases del dia -->
+                <Frame BackgroundColor="White"
+                    Grid.Row="1"
+                    Margin="20,28,20,0"
+                    CornerRadius="30"
+                    BorderColor="White"
+                    HasShadow="True">
+
+                    <!-- label frase del dia y frase gral -->
+                    <StackLayout Orientation="Vertical"
+                        HorizontalOptions="CenterAndExpand"
+                        Padding="0">
+
+                        <!-- Label "Frase del día" -->
+                        <StackLayout Orientation="Horizontal"
+                            HorizontalOptions="CenterAndExpand"
+                            Padding="0">
+                            <Label Text="Frase del día" FontAttributes="Bold"
+                                TextColor="#FF9C3A"
+                                FontSize="Small"
+                                VerticalOptions="StartAndExpand" Padding="0" />
+                        </StackLayout>
+
+                        <!-- Label contenido "Frase" -->
+                        <ScrollView VerticalOptions="FillAndExpand" Padding="0">
+                            <StackLayout Orientation="Vertical"
+                                HorizontalOptions="CenterAndExpand"
+                                Padding="0">
+                                <Label
+                                    Text="&quot;El éxito no es la clave de la felicidad. La felicidad es la clave del éxito. Si amas lo que estás haciendo, tendrás éxito.&quot; - Albert Schweitzer"
+                                    TextColor="{StaticResource secondaryColor }"
+                                    FontSize="Medium"
+                                    FontAttributes="Bold"
+                                />
+                            </StackLayout>
+                        </ScrollView>
+
+                    </StackLayout>
+                </Frame>
+
+                <!-- Contenido Sub-Menú-->
+                <StackLayout Grid.Row="2">
+                    <Grid ColumnSpacing="15"
+                        RowSpacing="15"
+                        Margin="20,28,20,0">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="100*" />
+                            <RowDefinition Height="100*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50*" />
+                            <ColumnDefinition Width="50*" />
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Registro-->
+                        <Frame BackgroundColor="White"
+                            CornerRadius="30"
+                            HasShadow="True"
+                            BorderColor="White"
+                            Padding="0">
+
+                            <!-- Evento comando -->
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Command="{Binding GoToRegisterCommand}" />
+                            </Frame.GestureRecognizers>
+
+                            <!-- Labels e imagenes -->
+                            <StackLayout Orientation="Vertical"
+                                VerticalOptions="FillAndExpand"
+                                HorizontalOptions="FillAndExpand"
+                                Spacing="10">
+                                <StackLayout Orientation="Vertical"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    Margin="0,30,0,30">
+                                    <Image WidthRequest="60"
+                                        HeightRequest="60"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center"
+                                        Source="icon_forms.png" />
+                                    <Label Text="REGISTRO"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center"
+                                        Margin="0,20,0,0"
+                                        TextColor="{StaticResource secondaryColor}"
+                                        FontAttributes="Bold"
+                                        FontFamily="Raleway-SemiBold.ttf#Raleway"
+                                        FontSize="20" />
+                                    <Label Text="FORMULARIO"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center"
+                                        TextColor="#A4A4A4"
+                                        FontSize="10"
+                                        Margin="0,5,0,0" />
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+
+                        <!-- Diagnostico -->
+                        <Frame Grid.Column="1"
+                            BackgroundColor="White"
+                            CornerRadius="30"
+                            HasShadow="True"
+                            BorderColor="White"
+                            Padding="0">
+
+                            <!-- Evento comando -->
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding GoToDiagnosticCommand}" />
+                            </Frame.GestureRecognizers>
+
+                            <!-- Labels e imagenes -->
+                            <StackLayout Orientation="Vertical"
+                                VerticalOptions="FillAndExpand"
+                                HorizontalOptions="FillAndExpand"
+                                Spacing="10">
+                                <StackLayout Orientation="Vertical"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    Margin="0,30,0,30">
+                                    <Image WidthRequest="60"
+                                        HeightRequest="60"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center"
+                                        Source="icon_scale" />
+                                    <Label Text="RESULTADOS"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center"
+                                        Margin="0,20,0,0"
+                                        TextColor="{StaticResource secondaryColor}"
+                                        FontAttributes="Bold"
+                                        FontFamily="Raleway-SemiBold.ttf#Raleway"
+                                        FontSize="20" />
+                                    <Label Text="ESCALA"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center"
+                                        TextColor="#A4A4A4"
+                                        FontSize="10"
+                                        Margin="0,5,0,0" />
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+
+
+                        <!-- Tests-->
+                        <Frame Grid.Row="1"
+                            BackgroundColor="White"
+                            CornerRadius="30"
+                            Padding="10"
+                            HasShadow="True"
+                            BorderColor="White">
+
+                            <!-- Evento comando -->
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding GoToTestsCommand}" />
+                            </Frame.GestureRecognizers>
+
+                            <!-- Labels e imagenes -->
+                            <StackLayout Orientation="Vertical"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"
+                                Margin="0,30,0,30">
+                                <Image WidthRequest="60"
+                                    HeightRequest="60"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    Source="icon_test.png" />
+                                <Label Text="TESTS"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    Margin="0,20,0,0"
+                                    TextColor="{StaticResource secondaryColor}"
+                                    FontAttributes="Bold"
+                                    FontFamily="Raleway-SemiBold.ttf#Raleway"
+                                    FontSize="20" />
+                                <Label Text="ESCALAS"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    TextColor="#A4A4A4"
+                                    FontSize="10"
+                                    Margin="0,5,0,0" />
+                            </StackLayout>
+                        </Frame>
+
+
+                        <!-- Pendiente -->
+                        <Frame Grid.Row="1"
+                            Grid.Column="1"
+                            BackgroundColor="White"
+                            CornerRadius="30"
+                            Padding="10"
+                            HasShadow="True"
+                            BorderColor="White">
+
+                            <!-- Evento comando -->
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding GoToEstrategiesCommand}" />
+                            </Frame.GestureRecognizers>
+
+                            <!-- Labels e imagenes -->
+                            <StackLayout Orientation="Vertical"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"
+                                Margin="0,30,0,30">
+                                <Image WidthRequest="60"
+                                    HeightRequest="60"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    Source="emotions.png" />
+                                <Label Text="ESTRATEGIAS"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    Margin="0,20,0,0"
+                                    TextColor="{StaticResource secondaryColor}"
+                                    FontAttributes="Bold"
+                                    FontFamily="Raleway-SemiBold.ttf#Raleway"
+                                    FontSize="20" />
+                                <Label Text="CONSEJOS"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    TextColor="#A4A4A4"
+                                    FontSize="10"
+                                    Margin="0,5,0,0" />
+                            </StackLayout>
+                        </Frame>
+
+                    </Grid>
+                </StackLayout>
+
+            </Grid>
+        </Grid>
+    </ScrollView>
+
+</ContentPage>

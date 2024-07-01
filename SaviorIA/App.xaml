@@ -1,0 +1,43 @@
+﻿<?xml version = "1.0" encoding = "UTF-8" ?>
+<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:SaviorIA"
+             xmlns:vml="clr-namespace:SaviorIA.ViewModels.Base"
+             x:Class="SaviorIA.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
+                <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <vml:ViewModelLocator x:Key="viewModelLocator" />
+
+
+            <!-- Colors -->
+            <Color x:Key="primaryColor"> #FFDD94 </Color>
+            <Color x:Key="secondaryColor"> #925D18</Color>
+            <Color x:Key="tertaryColor"> #ECEAE4</Color>
+            <Color x:Key="titleFormColor"> #595959</Color>
+
+
+            <!-- Styles -->
+            <Style x:Key="TitleForms"
+                TargetType="Label">
+                <Setter Property="TextColor"
+                    Value="{StaticResource titleFormColor}" />
+                <Setter Property="FontSize"
+                    Value="Large" />
+                <Setter Property="FontAttributes"
+                    Value="Bold" />
+            </Style>
+
+            <Style x:Key="SubtitleForms" TargetType="Label">
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontSize" Value="Large" />
+                <Setter Property="FontAttributes" Value="Bold" />
+            </Style>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

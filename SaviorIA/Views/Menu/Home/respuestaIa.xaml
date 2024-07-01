@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SaviorIA.Views.Menu.respuestaIa"
+             BindingContext="{Binding Source={StaticResource viewModelLocator}, Path=formIaViewModel}"
+             Title=" SAVIOR">
+
+             
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="{StaticResource primaryColor}" Offset="0" />
+            <GradientStop Color="#fbf5c9" Offset="1" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+    <VerticalStackLayout Padding="20,0,20,0" Spacing="10">
+
+        <StackLayout Spacing="10">
+            <StackLayout >
+                <!-- Elementos dentro del StackLayout -->
+                <Label Text="RESPUESTA SAVIOR " HorizontalOptions="Center" TextColor="White" FontSize="35" FontAttributes="Bold" Margin="0,30,0,30"/>
+                <!-- <Label Text="pruebas " HorizontalOptions="Center" TextColor="White" FontSize="20"/> -->
+            </StackLayout>
+
+            <Label Text="Hola:" TextColor="White"/>
+            <Frame BackgroundColor="White" CornerRadius="10" Padding="10">
+                <StackLayout >
+                    <Label Text="{Binding NombresIA}" TextColor="Black" />
+                    
+                </StackLayout>
+            </Frame>
+            
+            <Label Text="tengo este diagnostico para ti:" TextColor="White"/>
+            <Frame CornerRadius="10" Padding="10" >
+                <StackLayout HeightRequest="20" >
+                    <StackLayout.Triggers>
+                        <DataTrigger TargetType="StackLayout" Binding="{Binding DiagnosticoIa}" Value="Depresión mínima">
+                            <Setter Property="BackgroundColor" Value="LightGreen" />
+                        </DataTrigger>
+                        <DataTrigger TargetType="StackLayout" Binding="{Binding DiagnosticoIa}" Value="Depresión leve">
+                            <Setter Property="BackgroundColor" Value="DarkGreen" />
+                        </DataTrigger>
+                        <DataTrigger TargetType="StackLayout" Binding="{Binding DiagnosticoIa}" Value="Depresión moderada">
+                            <Setter Property="BackgroundColor" Value="Yellow" />
+                        </DataTrigger>
+                        <DataTrigger TargetType="StackLayout" Binding="{Binding DiagnosticoIa}" Value="Depresión grave">
+                            <Setter Property="BackgroundColor" Value="Pink" />
+                        </DataTrigger>
+                        <DataTrigger TargetType="StackLayout" Binding="{Binding DiagnosticoIa}" Value="Depresión muy grave">
+                            <Setter Property="BackgroundColor" Value="DarkRed" />
+                        </DataTrigger>
+                    </StackLayout.Triggers>
+                    
+                    <!-- Contenido del StackLayout, como el Label, aquí -->
+                    
+                </StackLayout>
+                <Label Text="{Binding DiagnosticoIa}" TextColor="Black" />
+            </Frame>
+            
+            
+            
+            <Label Text="Tengo este mensaje para ti:"  TextColor="White"/>
+            <Frame BackgroundColor="White" CornerRadius="10" Padding="10" >
+                <StackLayout HeightRequest="200">
+                    <Label Text="{Binding Mensaje}" TextColor="Black" />
+                </StackLayout>
+            </Frame>
+            
+        </StackLayout>
+
+        <Frame CornerRadius="5"
+        HasShadow="True"
+        BackgroundColor="White"
+        Padding="0"
+        HeightRequest="68"
+        VerticalOptions="EndAndExpand"
+        Margin="0,20,0,20">
+        <Button Text="FINALIZAR"
+            BackgroundColor="{StaticResource primaryColor}"
+            TextColor="White"
+            FontSize="28"
+            CornerRadius="5"
+            FontAttributes="Bold"
+            
+            x:Name="OnClick" />
+    </Frame>
+    </VerticalStackLayout>
+</ContentPage>

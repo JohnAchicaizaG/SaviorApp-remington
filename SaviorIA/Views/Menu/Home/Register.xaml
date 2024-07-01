@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="SaviorIA.Views.Menu.Register"
+    BindingContext="{Binding Source={StaticResource viewModelLocator}, Path=formIaViewModel}"
+    Title="Registro">
+
+
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="{StaticResource primaryColor}" Offset="0" />
+            <GradientStop Color="#fbf5c9" Offset="1" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <VerticalStackLayout>
+                <Grid>
+                    <Grid.Margin>
+                        <OnPlatform x:TypeArguments="Thickness">
+                            <On Platform="Android"
+                                Value="0,20,0,0" />
+                            <On Platform="iOS"
+                                Value="0,0,0,0" />
+                        </OnPlatform>
+                    </Grid.Margin>
+                    <Image Source="menu_headd.png"
+                        VerticalOptions="Fill"
+                        Aspect="Center"
+                        Margin="0,0,0,0"
+                    />
+                    <Grid RowDefinitions="*,*,*,*,*,auto,auto">
+                        <Grid Grid.Row="1"
+                            RowDefinitions="10*,10*,10*,10*,10*,10*,10*,10*,10*,10*,10*,10*,10*,10*,50*,10*,50*,10*"
+                            Margin="25,0,25,0">
+                            <Label Text="FORMULARIO PRINCIPAL"
+                                Grid.Row="0"
+                                FontSize="Small"
+                                TextColor="{StaticResource secondaryColor}" />
+                            <Label Text="Datos Generales"
+                                x:Name="nombreSeccion1"
+                                Grid.Row="1"
+                                Margin="0,0,0,0"
+                                Style="{StaticResource TitleForms}" />
+                            <Label Text="Sección 1"
+                                Grid.Row="2"
+                                Margin="0,0,0,10"
+                                Style="{StaticResource SubtitleForms}" />
+                            <Label Text="Fecha de Nacimiento"
+                                Grid.Row="3"
+                                FontSize="Small"
+                                Margin="0,20,0,10"
+                                TextColor="{StaticResource secondaryColor}" />
+
+                            <Grid Grid.Row="4">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+
+                                <!-- Fecha de Nacimiento-->
+
+                                <Frame Grid.Row="0" BackgroundColor="#f2f2f2" Padding="0"
+                                    CornerRadius="5" HorizontalOptions="FillAndExpand"
+                                    HasShadow="True" HeightRequest="60" IsClippedToBounds="True">
+
+                                    <Frame BackgroundColor="#f2f2f2"
+                                        Grid.Row="4"
+                                        Padding="0"
+                                        CornerRadius="5"
+                                        HasShadow="True"
+                                        HeightRequest="60"
+                                        IsClippedToBounds="True">
+                                        <StackLayout Orientation="Horizontal"
+                                            Padding="0"
+                                            Margin="0">
+
+                                            <StackLayout Orientation="Horizontal" Padding="0"
+                                                Margin="0">
+
+                                                <Frame BackgroundColor="White"
+                                                    BorderColor="Transparent"
+                                                    WidthRequest="60" HeightRequest="60"
+                                                    HorizontalOptions="Start">
+                                                    <Image Source="icon_calendar.png"></Image>
+                                                </Frame>
+
+                                                <DatePicker x:Name="fechaVacunacion"
+                                                    Format="MMMM dd yyyy"
+                                                    HorizontalOptions="FillAndExpand"
+                                                    Margin="10,0,10,0"
+                                                    VerticalOptions="CenterAndExpand"
+                                                    Date="{Binding FechaNacimiento}"></DatePicker>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </Frame>
+                                </Frame>
+
+
+                                <!-- Ubicacion -->
+
+                                <Frame Grid.Row="1" BackgroundColor="#f2f2f2" Padding="0"
+                                    CornerRadius="5" HorizontalOptions="FillAndExpand"
+                                    HasShadow="True"
+                                    HeightRequest="60"
+                                    IsClippedToBounds="True" Margin="0,5,0,0">
+
+                                    <Grid ColumnDefinitions="60,*" Padding="0" Margin="0">
+
+                                        <Frame Grid.Column="0" BackgroundColor="White"
+                                            BorderColor="Transparent" WidthRequest="60"
+                                            HeightRequest="60" HorizontalOptions="Start">
+                                            <Image Source="icon_ubication.png"></Image>
+                                        </Frame>
+
+                                        <Picker Grid.Column="1"
+                                            x:Name="ubicacion_nacimiento"
+                                            Title="Seleccione una ubicacion"
+                                            VerticalOptions="CenterAndExpand"
+                                            HorizontalOptions="FillAndExpand"
+                                            Margin="10,0,10,0"
+                                            SelectedItem="{Binding Ubicacion}">
+                                            <Picker.ItemsSource>
+                                                <x:Array Type="{x:Type x:String}">
+                                                    <x:String>Amazonas</x:String>
+                                                    <x:String>Antioquia</x:String>
+                                                    <x:String>Arauca</x:String>
+                                                    <x:String>Atlántico</x:String>
+                                                    <x:String>Bolívar</x:String>
+                                                    <x:String>Boyacá</x:String>
+                                                    <x:String>Caldas</x:String>
+                                                    <x:String>Caquetá</x:String>
+                                                    <x:String>Casanare</x:String>
+                                                    <x:String>Cauca</x:String>
+                                                    <x:String>Cesar</x:String>
+                                                    <x:String>Chocó</x:String>
+                                                    <x:String>Córdoba</x:String>
+                                                    <x:String>Cundinamarca</x:String>
+                                                    <x:String>Guainía</x:String>
+                                                    <x:String>Guaviare</x:String>
+                                                    <x:String>Huila</x:String>
+                                                    <x:String>La Guajira</x:String>
+                                                    <x:String>Magdalena</x:String>
+                                                    <x:String>Meta</x:String>
+                                                    <x:String>Nariño</x:String>
+                                                    <x:String>Norte de Santander</x:String>
+                                                    <x:String>Putumayo</x:String>
+                                                    <x:String>Quindío</x:String>
+                                                    <x:String>Risaralda</x:String>
+                                                    <x:String>San Andrés y Providencia</x:String>
+                                                    <x:String>Santander</x:String>
+                                                    <x:String>Sucre</x:String>
+                                                    <x:String>Tolima</x:String>
+                                                    <x:String>Valle del Cauca</x:String>
+                                                    <x:String>Vaupés</x:String>
+                                                    <x:String>Vichada</x:String>
+                                                </x:Array>
+                                            </Picker.ItemsSource>
+                                        </Picker>
+
+                                    </Grid>
+                                </Frame>
+                            </Grid>
+
+
+                            <!-- Numero de identificación -->
+                            <Label Text="Número de identificación" Grid.Row="5" FontSize="Small"
+                                Margin="0,20,0,10" TextColor="{StaticResource secondaryColor}" ></Label>
+
+                            <Frame Grid.Row="6" BackgroundColor="#f2f2f2" Padding="0"
+                                CornerRadius="5" HorizontalOptions="FillAndExpand" HasShadow="True"
+                                HeightRequest="60" IsClippedToBounds="True">
+
+                                <StackLayout Orientation="Horizontal" Padding="0" Margin="0">
+
+                                    <Frame BackgroundColor="White" BorderColor="Transparent"
+                                        WidthRequest="60" HeightRequest="60"
+                                        HorizontalOptions="Start">
+                                        <Image Source="icon_numeral.png"></Image>
+                                    </Frame>
+
+                                    <Entry Keyboard="Numeric" HorizontalOptions="FillAndExpand"
+                                        Margin="10,0,10,0" VerticalOptions="CenterAndExpand"
+                                        Placeholder="Numero de indentificación" Text="{Binding NumeroIdentificacion}"></Entry>
+                                </StackLayout>
+                            </Frame>
+
+                            <!-- Nombres -->
+                            <Label Text="Nombres" Grid.Row="7" FontSize="Small" Margin="0,20,0,10"
+                                TextColor="{StaticResource secondaryColor}"></Label>
+
+                            <Grid Grid.Row="8">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+
+                                <!-- Primer Nombre -->
+
+                                <Frame Grid.Row="0" BackgroundColor="#f2f2f2" Padding="0"
+                                    CornerRadius="5" HorizontalOptions="FillAndExpand"
+                                    HasShadow="True" HeightRequest="60" IsClippedToBounds="True">
+
+                                    <StackLayout Orientation="Horizontal" Padding="0" Margin="0">
+
+                                        <Frame BackgroundColor="White" BorderColor="Transparent"
+                                            WidthRequest="60" HeightRequest="60"
+                                            HorizontalOptions="Start">
+                                            <Image Source="icon_first_firstname.png"></Image>
+                                        </Frame>
+
+                                        <Entry Keyboard="Text" HorizontalOptions="FillAndExpand"
+                                            Margin="10,0,10,0" VerticalOptions="CenterAndExpand"
+                                            Placeholder="Primer nombre" Text="{Binding PrimerNombre}"></Entry>
+                                    </StackLayout>
+                                </Frame>
+
+
+                                <!-- Segundo Nombre -->
+
+                                <Frame Grid.Row="1" BackgroundColor="#f2f2f2" Padding="0"
+                                    CornerRadius="5" HorizontalOptions="FillAndExpand"
+                                    HasShadow="True" HeightRequest="60" IsClippedToBounds="True"
+                                    Margin="0,5,0,0">
+
+                                    <StackLayout Orientation="Horizontal" Padding="0" Margin="0">
+
+                                        <Frame BackgroundColor="White" BorderColor="Transparent"
+                                            WidthRequest="60" HeightRequest="60"
+                                            HorizontalOptions="Start">
+                                            <Image Source="icon_second_firstname.png"></Image>
+                                        </Frame>
+
+                                        <Entry Keyboard="Text" HorizontalOptions="FillAndExpand"
+                                            Margin="10,0,10,0" VerticalOptions="CenterAndExpand"
+                                            Placeholder="Segundo nombre" Text="{Binding SegundoNombre}"></Entry>
+                                    </StackLayout>
+                                </Frame>
+                            </Grid>
+
+
+                            <!-- Apellidos -->
+                            <Label Text="Apellidos" Grid.Row="9" FontSize="Small"
+                                Margin="0,20,0,10"
+                                TextColor="{StaticResource secondaryColor}"></Label>
+
+
+                            <Grid Grid.Row="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+
+                                <!-- Primer Apellido -->
+
+                                <Frame Grid.Row="0" BackgroundColor="#f2f2f2" Padding="0"
+                                    CornerRadius="5" HorizontalOptions="FillAndExpand"
+                                    HasShadow="True" HeightRequest="60" IsClippedToBounds="True">
+
+                                    <StackLayout Orientation="Horizontal" Padding="0" Margin="0">
+
+                                        <Frame BackgroundColor="White" BorderColor="Transparent"
+                                            WidthRequest="60" HeightRequest="60"
+                                            HorizontalOptions="Start">
+                                            <Image Source="icon_fisrt_lastname.png"></Image>
+                                        </Frame>
+
+                                        <Entry Keyboard="Text" HorizontalOptions="FillAndExpand"
+                                            Margin="10,0,10,0" VerticalOptions="CenterAndExpand"
+                                            Placeholder="Primer apellido" Text="{Binding PrimerApellido}"></Entry>
+                                    </StackLayout>
+                                </Frame>
+                                <!-- Segundo Apellido -->
+
+                                <Frame Grid.Row="1" BackgroundColor="#f2f2f2" Padding="0"
+                                    CornerRadius="5" HorizontalOptions="FillAndExpand"
+                                    HasShadow="True" HeightRequest="60" IsClippedToBounds="True"
+                                    Margin="0,5,0,0">
+
+                                    <StackLayout Orientation="Horizontal" Padding="0" Margin="0">
+
+                                        <Frame BackgroundColor="White" BorderColor="Transparent"
+                                            WidthRequest="60" HeightRequest="60"
+                                            HorizontalOptions="Start">
+                                            <Image Source="icon_second_lastname.png"></Image>
+                                        </Frame>
+
+                                        <Entry Keyboard="Text" HorizontalOptions="FillAndExpand"
+                                            Margin="10,0,10,0" VerticalOptions="CenterAndExpand"
+                                            Placeholder="Segundo apellido" Text="{Binding SegundoApellido}"></Entry>
+                                    </StackLayout>
+                                </Frame>
+                            </Grid>
+
+                            <!-- edad -->
+
+                            <Label Text="Edad" Grid.Row="11" FontSize="Small"
+                                Margin="0,20,0,10"
+                                TextColor="{StaticResource secondaryColor}"></Label>
+
+                            <Frame Grid.Row="12" BackgroundColor="#f2f2f2" Padding="0"
+                                CornerRadius="5" HorizontalOptions="FillAndExpand"
+                                HasShadow="True" HeightRequest="60" IsClippedToBounds="True">
+
+                                <StackLayout Orientation="Horizontal" Padding="0" Margin="0">
+
+                                    <Frame BackgroundColor="White" BorderColor="Transparent"
+                                        WidthRequest="60" HeightRequest="60"
+                                        HorizontalOptions="Start">
+                                        <Image Source="icon_age.png"></Image>
+                                    </Frame>
+
+                                    <Entry Keyboard="Numeric" HorizontalOptions="FillAndExpand"
+                                        Margin="10,0,10,0" VerticalOptions="CenterAndExpand"
+                                        Placeholder="Edad" Text="{Binding Edad}"></Entry>
+                                </StackLayout>
+                            </Frame>
+
+                            <!-- genero -->
+
+                            <Label Text="Genero" Grid.Row="13" FontSize="Small"
+                                Margin="0,20,0,10"
+                                TextColor="{StaticResource secondaryColor}"></Label>
+
+                            <Frame Grid.Row="14" BackgroundColor="#f2f2f2" Padding="0"
+                                CornerRadius="5" HorizontalOptions="FillAndExpand" HasShadow="True"
+                                HeightRequest="60"
+                                IsClippedToBounds="True">
+
+                                <Grid ColumnDefinitions="60,*" Padding="0" Margin="0">
+
+                                    <Frame Grid.Column="0" BackgroundColor="White"
+                                        BorderColor="Transparent" WidthRequest="60"
+                                        HeightRequest="60" HorizontalOptions="Start">
+                                        <Image Source="icon_ubication.png"></Image>
+                                    </Frame>
+
+                                    <Picker Grid.Column="1"
+                                        x:Name="genero"
+                                        Title="Seleccione un genero"
+                                        VerticalOptions="CenterAndExpand"
+                                        HorizontalOptions="FillAndExpand"
+                                        Margin="10,0,10,0"
+                                        SelectedItem="{Binding Genero}">
+                                        <Picker.ItemsSource>
+                                            <x:Array Type="{x:Type x:String}">
+                                                <x:String>Masculino</x:String>
+                                                <x:String>Femenino</x:String>
+                                                <x:String>Otro</x:String>
+                                            </x:Array>
+                                        </Picker.ItemsSource>
+                                    </Picker>
+
+                                </Grid>
+                            </Frame>
+                        </Grid>
+
+
+                        <!-- Boton Paso de seccion -->
+                        <Grid Grid.Row="2"
+                            BackgroundColor="Transparent"
+                            Padding="0"
+                            Margin="25,25,25,15"
+                            RowDefinitions="*,*">
+
+                            <Frame CornerRadius="10" HasShadow="True" Padding="0" Grid.RowSpan="2">
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer />
+                                </Frame.GestureRecognizers>
+                                <Grid>
+
+                                    <!-- Imagen de fondo -->
+                                    <Image Source="secondary_button_next.png" Aspect="AspectFill">
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding PruebasCommand}" ></TapGestureRecognizer>
+                                        </Image.GestureRecognizers>
+                                    </Image>
+
+                                    <!-- Contenido sobre la imagen -->
+                                    <StackLayout VerticalOptions="CenterAndExpand"
+                                        HorizontalOptions="Start" Margin="5,0,0,0">
+                                        <Label Text="Sección 2"
+                                            TextColor="White"
+                                            FontSize="Small"
+                                            Margin="10,2,0,0"
+                                            VerticalTextAlignment="Center"
+                                            HorizontalTextAlignment="Start"
+                                        />
+                                        <Label Text="Preguntas"
+                                            x:Name="nombreBotonSeccion1"
+                                            TextColor="{StaticResource primaryColor}"
+                                            Margin="10,0,0,0"
+                                            FontSize="Small"
+                                            VerticalTextAlignment="Start"
+                                            HorizontalTextAlignment="Start"
+                                        />
+                                    </StackLayout>
+                                </Grid>
+                            </Frame>
+
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </VerticalStackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

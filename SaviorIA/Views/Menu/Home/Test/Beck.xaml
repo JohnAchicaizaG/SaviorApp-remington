@@ -1,0 +1,717 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="SaviorIA.Views.Menu.Tests.Beck"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    BindingContext="{Binding Source={StaticResource viewModelLocator}, Path=testViewModel}"
+    Title="Beck">
+
+    <ContentPage.Resources>
+        <ControlTemplate x:Key="RadioButtonTemplate">
+            <Border Stroke="#F3F2F1"
+                StrokeThickness="2"
+                StrokeShape="RoundRectangle 10"
+                BackgroundColor="#F3F2F1"
+                HeightRequest="90"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                Padding="20,20,10,20"
+                Margin="0,5,0,0">
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CheckedStates">
+                            <VisualState x:Name="Checked">
+                                <VisualState.Setters>
+                                    <Setter Property="Stroke"
+                                        Value="{StaticResource primaryColor}" />
+                                    <Setter TargetName="check"
+                                        Property="Opacity"
+                                        Value="1" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Unchecked">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor"
+                                        Value="#F3F2F1" />
+                                    <Setter Property="Stroke"
+                                        Value="#F3F2F1" />
+                                    <Setter TargetName="check"
+                                        Property="Opacity"
+                                        Value="0" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </VisualStateManager.VisualStateGroups>
+
+                <Grid>
+                    <Grid
+                        WidthRequest="35"
+                        HeightRequest="35"
+                        HorizontalOptions="End"
+                        VerticalOptions="Start"
+                        Padding="0,0,30,0"
+                    >
+                        <Ellipse Stroke="{StaticResource primaryColor}"
+                            Fill="White"
+                            WidthRequest="28"
+                            HeightRequest="28"
+                            HorizontalOptions="FillAndExpand"
+                            VerticalOptions="FillAndExpand"
+                            Margin="10,0,0,0" />
+                        <Ellipse x:Name="check"
+                            Fill="{StaticResource primaryColor}"
+                            WidthRequest="15"
+                            HeightRequest="15"
+                            HorizontalOptions="FillAndExpand"
+                            VerticalOptions="FillAndExpand"
+                            Margin="10,0,0,0" />
+                    </Grid>
+                    <ContentPresenter Padding="0,0,50,0" VerticalOptions="CenterAndExpand" />
+
+
+                </Grid>
+
+            </Border>
+        </ControlTemplate>
+
+        <Style TargetType="RadioButton">
+            <Setter Property="ControlTemplate"
+                Value="{StaticResource RadioButtonTemplate}" />
+        </Style>
+    </ContentPage.Resources>
+
+    <ScrollView>
+
+
+        <Grid Margin="0,10,0,0">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+
+            <!--tristeza-->
+            <Grid Grid.Row="0" Padding="5">
+                <toolkit:Expander>
+                    <toolkit:Expander.Header>
+                        <Frame CornerRadius="15" Padding="10"
+                            BackgroundColor="{StaticResource primaryColor}" HasShadow="True">
+                            <Grid>
+                                <Image Source="icon_down_arrow.png" Aspect="AspectFit"
+                                    HorizontalOptions="End" VerticalOptions="Center"
+                                    WidthRequest="25" HeightRequest="25" />
+                                <Label Text="1. Tristeza" HorizontalOptions="Start" VerticalOptions="Center"
+                                    TextColor="{StaticResource secondaryColor}" Margin="10,0,0,0" />
+                            </Grid>
+                        </Frame>
+                    </toolkit:Expander.Header>
+
+                    <!-- Expander -->
+                    <StackLayout>
+                        <RadioButton Value="0" Content="No me siento triste." GroupName="tristezaGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                        <RadioButton Value="1" Content="Me siento triste gran parte del tiempo." GroupName="tristezaGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                        <RadioButton Value="2" Content="Me siento triste todo el tiempo." GroupName="tristezaGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                        <RadioButton Value="3" Content="Me siento tan triste o soy tan infeliz que no puedo soportarlo. " GroupName="tristezaGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                    </StackLayout>
+
+                </toolkit:Expander>
+            </Grid>
+
+            <!--Pesimismo-->
+            <Grid Grid.Row="1" Padding="5">
+                <toolkit:Expander>
+                    <toolkit:Expander.Header>
+                        <Frame CornerRadius="15" Padding="10"
+                            BackgroundColor="{StaticResource primaryColor}" HasShadow="True">
+                            <Grid>
+                                <Image Source="icon_down_arrow.png" Aspect="AspectFit"
+                                    HorizontalOptions="End" VerticalOptions="Center"
+                                    WidthRequest="25" HeightRequest="25" />
+                                <Label Text="2. Pesimismo" HorizontalOptions="Start"
+                                    VerticalOptions="Center"
+                                    TextColor="{StaticResource secondaryColor}" Padding="10,0,40,0" />
+                            </Grid>
+                        </Frame>
+                    </toolkit:Expander.Header>
+
+                    <!-- Expander -->
+                    <StackLayout>
+                        <RadioButton Value="0" Content="No estoy desalentado respecto del mi futuro." GroupName="pesimismoGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                        <RadioButton Value="1" Content="Me siento más desalentado respecto de mi futuro que lo que solía estarlo." GroupName="pesimismoGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                        <RadioButton Value="2" Content="No espero que las cosas funcionen para mi." GroupName="pesimismoGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                        <RadioButton Value="3" Content="Siento que no hay esperanza para mi futuro y que sólo puede empeorar." GroupName="pesimismoGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                    </StackLayout>
+                </toolkit:Expander>
+            </Grid>
+
+            <!--Fracaso-->
+            <Grid Grid.Row="2" Padding="5">
+                <toolkit:Expander>
+                    <toolkit:Expander.Header>
+                        <Frame CornerRadius="15" Padding="10"
+                            BackgroundColor="{StaticResource primaryColor}" HasShadow="True">
+                            <Grid>
+                                <Image Source="icon_down_arrow.png" Aspect="AspectFit"
+                                    HorizontalOptions="End" VerticalOptions="Center"
+                                    WidthRequest="25" HeightRequest="25" />
+                                <Label Text="3. Fracaso" HorizontalOptions="Start"
+                                    VerticalOptions="Center"
+                                    TextColor="{StaticResource secondaryColor}" Padding="10,0,40,0" />
+                            </Grid>
+                        </Frame>
+                    </toolkit:Expander.Header>
+
+                    <!-- Expander -->
+                    <StackLayout>
+                        <RadioButton Value="0" Content="No me siento como un fracasado." GroupName="fracasoGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                        <RadioButton Value="1" Content="He fracasado más de lo que hubiera debido." GroupName="fracasoGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                        <RadioButton Value="2" Content="Cuando miro hacia atrás, veo muchos fracasos." GroupName="fracasoGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                        <RadioButton Value="3" Content="Siento que como persona soy un fracaso total." GroupName="fracasoGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                    </StackLayout>
+                </toolkit:Expander>
+            </Grid>
+
+            <!--Pérdida de Placer-->
+            <Grid Grid.Row="3" Padding="5">
+                <toolkit:Expander>
+                    <toolkit:Expander.Header>
+                        <Frame CornerRadius="15" Padding="10"
+                            BackgroundColor="{StaticResource primaryColor}" HasShadow="True">
+                            <Grid>
+                                <Image Source="icon_down_arrow.png" Aspect="AspectFit"
+                                    HorizontalOptions="End" VerticalOptions="Center"
+                                    WidthRequest="25" HeightRequest="25" />
+                                <Label Text="4. Pérdida de Placer" HorizontalOptions="Start"
+                                    VerticalOptions="Center"
+                                    TextColor="{StaticResource secondaryColor}" Padding="10,0,40,0" />
+                            </Grid>
+                        </Frame>
+                    </toolkit:Expander.Header>
+
+                    <!-- Expander -->
+                    <StackLayout>
+                        <RadioButton Value="0" Content="Obtengo tanto placer como siempre por las cosas de las que disfruto." GroupName="perdidaPlacerGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                        <RadioButton Value="1" Content="No disfruto tanto de las cosas como solía hacerlo." GroupName="perdidaPlacerGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                        <RadioButton Value="2" Content="Obtengo muy poco placer de las cosas que solía disfrutar." GroupName="perdidaPlacerGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                        <RadioButton Value="3" Content="No puedo obtener ningún placer de las cosas de las que solía disfrutar." GroupName="perdidaPlacerGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                    </StackLayout>
+                </toolkit:Expander>
+            </Grid>
+
+            <!--Sentimientos de Culpa-->
+            <Grid Grid.Row="4" Padding="5">
+                <toolkit:Expander>
+                    <toolkit:Expander.Header>
+                        <Frame CornerRadius="15" Padding="10"
+                            BackgroundColor="{StaticResource primaryColor}" HasShadow="True">
+                            <Grid>
+                                <Image Source="icon_down_arrow.png" Aspect="AspectFit"
+                                    HorizontalOptions="End" VerticalOptions="Center"
+                                    WidthRequest="25" HeightRequest="25" />
+                                <Label Text="5. Sentimientos de Culpa" HorizontalOptions="Start"
+                                    VerticalOptions="Center"
+                                    TextColor="{StaticResource secondaryColor}" Padding="10,0,40,0" />
+                            </Grid>
+                        </Frame>
+                    </toolkit:Expander.Header>
+
+                    <!-- Expander -->
+                    <StackLayout>
+                        <RadioButton Value="0" Content="No me siento particularmente culpable." GroupName="sentimientoCulpaGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                        <RadioButton Value="1" Content="Me siento culpable respecto de varias cosas que he hecho o que debería haber hecho" GroupName="sentimientoCulpaGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                        <RadioButton Value="2" Content="Me siento bastante culpable la mayor parte del tiempo." GroupName="sentimientoCulpaGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                        <RadioButton Value="3" Content="Me siento culpable todo el tiempo." GroupName="sentimientoCulpaGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                    </StackLayout>
+                </toolkit:Expander>
+            </Grid>
+
+            <!--Sentimientos de Castigo-->
+            <Grid Grid.Row="5" Padding="5">
+                <toolkit:Expander>
+                    <toolkit:Expander.Header>
+                        <Frame CornerRadius="15" Padding="10"
+                            BackgroundColor="{StaticResource primaryColor}" HasShadow="True">
+                            <Grid>
+                                <Image Source="icon_down_arrow.png" Aspect="AspectFit"
+                                    HorizontalOptions="End" VerticalOptions="Center"
+                                    WidthRequest="25" HeightRequest="25" />
+                                <Label Text="6. Sentimientos de Castigo" HorizontalOptions="Start"
+                                    VerticalOptions="Center"
+                                    TextColor="{StaticResource secondaryColor}" Padding="10,0,40,0" />
+                            </Grid>
+                        </Frame>
+                    </toolkit:Expander.Header>
+
+                    <!-- Expander -->
+                    <StackLayout>
+                        <RadioButton Value="0" Content="No siento que este siendo castigado" GroupName="sentimientoCastigoGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                        <RadioButton Value="1" Content="Siento que tal vez pueda ser castigado." GroupName="sentimientoCastigoGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                        <RadioButton Value="2" Content="Espero ser castigado." GroupName="sentimientoCastigoGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                        <RadioButton Value="3" Content="Siento que estoy siendo castigado." GroupName="sentimientoCastigoGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                    </StackLayout>
+                </toolkit:Expander>
+            </Grid>
+          
+            <!--Disconformidad con uno mismo-->
+            <Grid Grid.Row="6" Padding="5">
+                <toolkit:Expander>
+                    <toolkit:Expander.Header>
+                        <Frame CornerRadius="15" Padding="10"
+                            BackgroundColor="{StaticResource primaryColor}" HasShadow="True">
+                            <Grid>
+                                <Image Source="icon_down_arrow.png" Aspect="AspectFit"
+                                    HorizontalOptions="End" VerticalOptions="Center"
+                                    WidthRequest="25" HeightRequest="25" />
+                                <Label Text="7. Disconformidad con uno mismo" HorizontalOptions="Start"
+                                    VerticalOptions="Center"
+                                    TextColor="{StaticResource secondaryColor}" Padding="10,0,40,0" />
+                            </Grid>
+                        </Frame>
+                    </toolkit:Expander.Header>
+
+                    <!-- Expander -->
+                    <StackLayout>
+                        <RadioButton Value="0" Content="Siento acerca de mi lo mismo que siempre." GroupName="disconformidadGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                        <RadioButton Value="1" Content="He perdido la confianza en mí mismo" GroupName="disconformidadGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                        <RadioButton Value="2" Content="Estoy decepcionado conmigo mismo." GroupName="disconformidadGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                        <RadioButton Value="3" Content="No me gusto a mí mismo." GroupName="disconformidadGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                    </StackLayout>
+                </toolkit:Expander>
+            </Grid>
+
+            <!--Autocrítica-->
+            <Grid Grid.Row="7" Padding="5">
+                <toolkit:Expander>
+                    <toolkit:Expander.Header>
+                        <Frame CornerRadius="15" Padding="10"
+                            BackgroundColor="{StaticResource primaryColor}" HasShadow="True">
+                            <Grid>
+                                <Image Source="icon_down_arrow.png" Aspect="AspectFit"
+                                    HorizontalOptions="End" VerticalOptions="Center"
+                                    WidthRequest="25" HeightRequest="25" />
+                                <Label Text="8. Autocrítica" HorizontalOptions="Start"
+                                    VerticalOptions="Center"
+                                    TextColor="{StaticResource secondaryColor}" Padding="10,0,40,0" />
+                            </Grid>
+                        </Frame>
+                    </toolkit:Expander.Header>
+
+                    <!-- Autocrítica -->
+                    <StackLayout>
+                        <RadioButton Value="0" Content="No me critico ni me culpo más de lo habitual" GroupName="autocriticaGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                        <RadioButton Value="1" Content="Estoy más crítico conmigo mismo de lo que solía estarlo" GroupName="autocriticaGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                        <RadioButton Value="2" Content="Me critico a mí mismo por todos mis errores" GroupName="autocriticaGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                        <RadioButton Value="3" Content="Me culpo a mí mismo por todo lo malo que sucede." GroupName="autocriticaGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                    </StackLayout>
+                </toolkit:Expander>
+            </Grid>
+     
+            <!--Pensamientos o Deseos Suicidas-->
+            <Grid Grid.Row="8" Padding="5">
+                <toolkit:Expander>
+                    <toolkit:Expander.Header>
+                        <Frame CornerRadius="15" Padding="10"
+                            BackgroundColor="{StaticResource primaryColor}" HasShadow="True">
+                            <Grid>
+                                <Image Source="icon_down_arrow.png" Aspect="AspectFit"
+                                    HorizontalOptions="End" VerticalOptions="Center"
+                                    WidthRequest="25" HeightRequest="25" />
+                                <Label Text="9. Pensamientos o Deseos Suicidas" HorizontalOptions="Start"
+                                    VerticalOptions="Center"
+                                    TextColor="{StaticResource secondaryColor}" Padding="10,0,40,0" />
+                            </Grid>
+                        </Frame>
+                    </toolkit:Expander.Header>
+
+                    <!-- Autocrítica -->
+                    <StackLayout>
+                        <RadioButton Value="0" Content="No tengo ningún pensamiento de matarme" GroupName="pensamientoSuicidaGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                        <RadioButton Value="1" Content="He tenido pensamientos de matarme, pero no lo haría" GroupName="pensamientoSuicidaGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                        <RadioButton Value="2" Content="Querría matarme" GroupName="pensamientoSuicidaGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                        <RadioButton Value="3" Content="Me mataría si tuviera la oportunidad de hacerlo." GroupName="pensamientoSuicidaGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                    </StackLayout>
+                </toolkit:Expander>
+            </Grid>
+
+            <!--Llanto-->
+            <Grid Grid.Row="9" Padding="5">
+                <toolkit:Expander>
+                    <toolkit:Expander.Header>
+                        <Frame CornerRadius="15" Padding="10"
+                            BackgroundColor="{StaticResource primaryColor}" HasShadow="True">
+                            <Grid>
+                                <Image Source="icon_down_arrow.png" Aspect="AspectFit"
+                                    HorizontalOptions="End" VerticalOptions="Center"
+                                    WidthRequest="25" HeightRequest="25" />
+                                <Label Text="10. Llanto" HorizontalOptions="Start"
+                                    VerticalOptions="Center"
+                                    TextColor="{StaticResource secondaryColor}" Padding="10,0,40,0" />
+                            </Grid>
+                        </Frame>
+                    </toolkit:Expander.Header>
+
+                    <!-- Autocrítica -->
+                    <StackLayout>
+                        <RadioButton Value="0" Content="No lloro más de lo que solía hacerlo." GroupName="llantoGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                        <RadioButton Value="1" Content="Lloro más de lo que solía hacerlo" GroupName="llantoGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                        <RadioButton Value="2" Content="Lloro por cualquier pequeñez" GroupName="llantoGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                        <RadioButton Value="3" Content="Siento ganas de llorar pero no puedo." GroupName="llantoGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                    </StackLayout>
+                </toolkit:Expander>
+            </Grid>
+
+            <!--Agitación-->
+            <Grid Grid.Row="10" Padding="5">
+                <toolkit:Expander>
+                    <toolkit:Expander.Header>
+                        <Frame CornerRadius="15" Padding="10"
+                            BackgroundColor="{StaticResource primaryColor}" HasShadow="True">
+                            <Grid>
+                                <Image Source="icon_down_arrow.png" Aspect="AspectFit"
+                                    HorizontalOptions="End" VerticalOptions="Center"
+                                    WidthRequest="25" HeightRequest="25" />
+                                <Label Text="11. Agitación" HorizontalOptions="Start"
+                                    VerticalOptions="Center"
+                                    TextColor="{StaticResource secondaryColor}" Padding="10,0,40,0" />
+                            </Grid>
+                        </Frame>
+                    </toolkit:Expander.Header>
+
+                    <!-- Autocrítica -->
+                    <StackLayout>
+                        <RadioButton Value="0" Content="No estoy más inquieto o tenso que lo habitual." GroupName="agitacionGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                        <RadioButton Value="1" Content="Me siento más inquieto o tenso que lo habitual." GroupName="agitacionGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                        <RadioButton Value="2" Content="Estoy tan inquieto o agitado que me es difícil quedarme quieto" GroupName="agitacionGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                        <RadioButton Value="3" Content="Estoy tan inquieto o agitado que tengo que estar siempre en movimiento o haciendo algo" GroupName="agitacionGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                    </StackLayout>
+                </toolkit:Expander>
+            </Grid>
+
+            <!--Pérdida de Interés-->
+            <Grid Grid.Row="11" Padding="5">
+                <toolkit:Expander>
+                    <toolkit:Expander.Header>
+                        <Frame CornerRadius="15" Padding="10"
+                            BackgroundColor="{StaticResource primaryColor}" HasShadow="True">
+                            <Grid>
+                                <Image Source="icon_down_arrow.png" Aspect="AspectFit"
+                                    HorizontalOptions="End" VerticalOptions="Center"
+                                    WidthRequest="25" HeightRequest="25" />
+                                <Label Text="12. Pérdida de Interés" HorizontalOptions="Start"
+                                    VerticalOptions="Center"
+                                    TextColor="{StaticResource secondaryColor}" Padding="10,0,40,0" />
+                            </Grid>
+                        </Frame>
+                    </toolkit:Expander.Header>
+
+                    <!-- Autocrítica -->
+                    <StackLayout>
+                        <RadioButton Value="0" Content="No he perdido el interés en otras actividades o personas." GroupName="perdidaInteresGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                        <RadioButton Value="1" Content="Estoy menos interesado que antes en otras personas o cosas." GroupName="perdidaInteresGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                        <RadioButton Value="2" Content="He perdido casi todo el interés en otras personas o cosas." GroupName="perdidaInteresGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                        <RadioButton Value="3" Content="Me es difícil interesarme por algo." GroupName="perdidaInteresGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                    </StackLayout>
+                </toolkit:Expander>
+            </Grid>      
+            
+            <!--Indecisión-->
+            <Grid Grid.Row="12" Padding="5">
+                <toolkit:Expander>
+                    <toolkit:Expander.Header>
+                        <Frame CornerRadius="15" Padding="10"
+                            BackgroundColor="{StaticResource primaryColor}" HasShadow="True">
+                            <Grid>
+                                <Image Source="icon_down_arrow.png" Aspect="AspectFit"
+                                    HorizontalOptions="End" VerticalOptions="Center"
+                                    WidthRequest="25" HeightRequest="25" />
+                                <Label Text="13. Indecisión" HorizontalOptions="Start"
+                                    VerticalOptions="Center"
+                                    TextColor="{StaticResource secondaryColor}" Padding="10,0,40,0" />
+                            </Grid>
+                        </Frame>
+                    </toolkit:Expander.Header>
+
+                    <!-- Autocrítica -->
+                    <StackLayout>
+                        <RadioButton Value="0" Content="Tomo mis propias decisiones tan bien como siempre." GroupName="indecisionGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                        <RadioButton Value="1" Content="Me resulta más difícil que de costumbre tomar decisiones" GroupName="indecisionGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                        <RadioButton Value="2" Content="Encuentro mucha más dificultad que antes para tomar decisiones." GroupName="indecisionGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                        <RadioButton Value="3" Content="Tengo problemas para tomar cualquier decisión. " GroupName="indecisionGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                    </StackLayout>
+                </toolkit:Expander>
+            </Grid>  
+
+            <!--Desvalorización-->
+            <Grid Grid.Row="13" Padding="5">
+                <toolkit:Expander>
+                    <toolkit:Expander.Header>
+                        <Frame CornerRadius="15" Padding="10"
+                            BackgroundColor="{StaticResource primaryColor}" HasShadow="True">
+                            <Grid>
+                                <Image Source="icon_down_arrow.png" Aspect="AspectFit"
+                                    HorizontalOptions="End" VerticalOptions="Center"
+                                    WidthRequest="25" HeightRequest="25" />
+                                <Label Text="14. Desvalorización" HorizontalOptions="Start"
+                                    VerticalOptions="Center"
+                                    TextColor="{StaticResource secondaryColor}" Padding="10,0,40,0" />
+                            </Grid>
+                        </Frame>
+                    </toolkit:Expander.Header>
+
+                    <!-- Autocrítica -->
+                    <StackLayout>
+                        <RadioButton Value="0" Content="No siento que yo no sea valioso" GroupName="desvalorizacionGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                        <RadioButton Value="1" Content="No me considero a mi mismo tan valioso y útil como solía considerarme" GroupName="desvalorizacionGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                        <RadioButton Value="2" Content="Me siento menos valioso cuando me comparo con otros." GroupName="desvalorizacionGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                        <RadioButton Value="3" Content="Siento que no valgo nada." GroupName="desvalorizacionGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                    </StackLayout>
+                </toolkit:Expander>
+            </Grid> 
+
+            <!--Pérdida de Energía-->
+            <Grid Grid.Row="14" Padding="5">
+                <toolkit:Expander>
+                    <toolkit:Expander.Header>
+                        <Frame CornerRadius="15" Padding="10"
+                            BackgroundColor="{StaticResource primaryColor}" HasShadow="True">
+                            <Grid>
+                                <Image Source="icon_down_arrow.png" Aspect="AspectFit"
+                                    HorizontalOptions="End" VerticalOptions="Center"
+                                    WidthRequest="25" HeightRequest="25" />
+                                <Label Text="15. Pérdida de Energía" HorizontalOptions="Start"
+                                    VerticalOptions="Center"
+                                    TextColor="{StaticResource secondaryColor}" Padding="10,0,40,0" />
+                            </Grid>
+                        </Frame>
+                    </toolkit:Expander.Header>
+
+                    <!-- Autocrítica -->
+                    <StackLayout>
+                        <RadioButton Value="0" Content="Tengo tanta energía como siempre." GroupName="perdiaEnergiaGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                        <RadioButton Value="1" Content="Tengo menos energía que la que solía tener." GroupName="perdiaEnergiaGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                        <RadioButton Value="2" Content="No tengo suficiente energía para hacer demasiado" GroupName="perdiaEnergiaGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                        <RadioButton Value="3" Content="No tengo energía suficiente para hacer nada." GroupName="perdiaEnergiaGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                    </StackLayout>
+                </toolkit:Expander>
+            </Grid> 
+
+            
+            <!--Cambios en los Hábitos de Sueño-->
+            <Grid Grid.Row="15" Padding="5">
+                <toolkit:Expander>
+                    <toolkit:Expander.Header>
+                        <Frame CornerRadius="15" Padding="10"
+                            BackgroundColor="{StaticResource primaryColor}" HasShadow="True">
+                            <Grid>
+                                <Image Source="icon_down_arrow.png" Aspect="AspectFit"
+                                    HorizontalOptions="End" VerticalOptions="Center"
+                                    WidthRequest="25" HeightRequest="25" />
+                                <Label Text="16. Cambios en los Hábitos de Sueño" HorizontalOptions="Start"
+                                    VerticalOptions="Center"
+                                    TextColor="{StaticResource secondaryColor}" Padding="10,0,40,0" />
+                            </Grid>
+                        </Frame>
+                    </toolkit:Expander.Header>
+
+                    <!-- Autocrítica -->
+                    <StackLayout>
+                        <RadioButton Value="0" Content="No he experimentado ningún cambio en mis hábitos de sueño." GroupName="cambioHabitosSuenoGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                        <RadioButton Value="1" Content="Duermo un poco menos que lo habitual." GroupName="cambioHabitosSuenoGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                        <RadioButton Value="2" Content="Duermo mucho menos que lo habitual." GroupName="cambioHabitosSuenoGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                        <RadioButton Value="3" Content="Me despierto 1-2 horas más temprano y no puedo volver a dormirme." GroupName="cambioHabitosSuenoGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                    </StackLayout>
+                </toolkit:Expander>
+            </Grid>       
+            
+            <!--Irritabilidad-->
+            <Grid Grid.Row="16" Padding="5">
+                <toolkit:Expander>
+                    <toolkit:Expander.Header>
+                        <Frame CornerRadius="15" Padding="10"
+                            BackgroundColor="{StaticResource primaryColor}" HasShadow="True">
+                            <Grid>
+                                <Image Source="icon_down_arrow.png" Aspect="AspectFit"
+                                    HorizontalOptions="End" VerticalOptions="Center"
+                                    WidthRequest="25" HeightRequest="25" />
+                                <Label Text="17. Irritabilidad" HorizontalOptions="Start"
+                                    VerticalOptions="Center"
+                                    TextColor="{StaticResource secondaryColor}" Padding="10,0,40,0" />
+                            </Grid>
+                        </Frame>
+                    </toolkit:Expander.Header>
+
+                    <!-- Autocrítica -->
+                    <StackLayout>
+                        <RadioButton Value="0" Content="No estoy tan irritable que lo habitual." GroupName="irritabilidadGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                        <RadioButton Value="1" Content="Estoy más irritable que lo habitual." GroupName="irritabilidadGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                        <RadioButton Value="2" Content="Estoy mucho más irritable que lo habitual." GroupName="irritabilidadGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                        <RadioButton Value="3" Content="Estoy irritable todo el tiempo." GroupName="irritabilidadGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                    </StackLayout>
+                </toolkit:Expander>
+            </Grid>   
+            
+            <!-- Cambios en el Apetito-->
+            <Grid Grid.Row="17" Padding="5">
+                <toolkit:Expander>
+                    <toolkit:Expander.Header>
+                        <Frame CornerRadius="15" Padding="10"
+                            BackgroundColor="{StaticResource primaryColor}" HasShadow="True">
+                            <Grid>
+                                <Image Source="icon_down_arrow.png" Aspect="AspectFit"
+                                    HorizontalOptions="End" VerticalOptions="Center"
+                                    WidthRequest="25" HeightRequest="25" />
+                                <Label Text="18.  Cambios en el Apetito" HorizontalOptions="Start"
+                                    VerticalOptions="Center"
+                                    TextColor="{StaticResource secondaryColor}" Padding="10,0,40,0" />
+                            </Grid>
+                        </Frame>
+                    </toolkit:Expander.Header>
+
+                    <!-- Autocrítica -->
+                    <StackLayout>
+                        <RadioButton Value="0" Content="No he experimentado ningún cambio en mi apetito." GroupName="cambiosApetitoGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                        <RadioButton Value="1" Content="Mi apetito es un poco menor que lo habitual." GroupName="cambiosApetitoGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                        <RadioButton Value="2" Content="Mi apetito es mucho menor que antes." GroupName="cambiosApetitoGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                        <RadioButton Value="3" Content="No tengo apetito en absoluto." GroupName="cambiosApetitoGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                    </StackLayout>
+                </toolkit:Expander>
+            </Grid>    
+            
+            <!-- Dificultad de Concentración-->
+            <Grid Grid.Row="18" Padding="5">
+                <toolkit:Expander>
+                    <toolkit:Expander.Header>
+                        <Frame CornerRadius="15" Padding="10"
+                            BackgroundColor="{StaticResource primaryColor}" HasShadow="True">
+                            <Grid>
+                                <Image Source="icon_down_arrow.png" Aspect="AspectFit"
+                                    HorizontalOptions="End" VerticalOptions="Center"
+                                    WidthRequest="25" HeightRequest="25" />
+                                <Label Text="19.  Dificultad de Concentración" HorizontalOptions="Start"
+                                    VerticalOptions="Center"
+                                    TextColor="{StaticResource secondaryColor}" Padding="10,0,40,0" />
+                            </Grid>
+                        </Frame>
+                    </toolkit:Expander.Header>
+
+                    <!-- Autocrítica -->
+                    <StackLayout>
+                        <RadioButton Value="0" Content="Puedo concentrarme tan bien como siempre." GroupName="dificultadConcentracionGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                        <RadioButton Value="1" Content="No puedo concentrarme tan bien como habitualmente." GroupName="dificultadConcentracionGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                        <RadioButton Value="2" Content="Me es difícil mantener la mente en algo por mucho tiempo." GroupName="dificultadConcentracionGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                        <RadioButton Value="3" Content="Encuentro que no puedo concentrarme en nada." GroupName="dificultadConcentracionGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                    </StackLayout>
+                </toolkit:Expander>
+            </Grid>      
+            
+            <!-- Cansancio o Fatiga-->
+            <Grid Grid.Row="19" Padding="5">
+                <toolkit:Expander>
+                    <toolkit:Expander.Header>
+                        <Frame CornerRadius="15" Padding="10"
+                            BackgroundColor="{StaticResource primaryColor}" HasShadow="True">
+                            <Grid>
+                                <Image Source="icon_down_arrow.png" Aspect="AspectFit"
+                                    HorizontalOptions="End" VerticalOptions="Center"
+                                    WidthRequest="25" HeightRequest="25" />
+                                <Label Text="20.  Cansancio o Fatiga" HorizontalOptions="Start"
+                                    VerticalOptions="Center"
+                                    TextColor="{StaticResource secondaryColor}" Padding="10,0,40,0" />
+                            </Grid>
+                        </Frame>
+                    </toolkit:Expander.Header>
+
+                    <!-- Autocrítica -->
+                    <StackLayout>
+                        <RadioButton Value="0" Content="No estoy más cansado o fatigado que lo habitual." GroupName="cansancioFatigaGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                        <RadioButton Value="1" Content="Me fatigo o me canso más fácilmente que lo habitual." GroupName="cansancioFatigaGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                        <RadioButton Value="2" Content="Estoy demasiado fatigado o cansado para hacer muchas de las cosas que solía hacer." GroupName="cansancioFatigaGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                        <RadioButton Value="3" Content="Estoy demasiado fatigado o cansado para hacer la mayoría de las cosas que solía hacer." GroupName="cansancioFatigaGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                    </StackLayout>
+                </toolkit:Expander>
+            </Grid>   
+            
+            <!-- Pérdida de Interés en el Sexo-->
+            <Grid Grid.Row="20" Padding="5">
+                <toolkit:Expander>
+                    <toolkit:Expander.Header>
+                        <Frame CornerRadius="15" Padding="10"
+                            BackgroundColor="{StaticResource primaryColor}" HasShadow="True">
+                            <Grid>
+                                <Image Source="icon_down_arrow.png" Aspect="AspectFit"
+                                    HorizontalOptions="End" VerticalOptions="Center"
+                                    WidthRequest="25" HeightRequest="25" />
+                                <Label Text="21.  Pérdida de Interés en el Sexo" HorizontalOptions="Start"
+                                    VerticalOptions="Center"
+                                    TextColor="{StaticResource secondaryColor}" Padding="10,0,40,0" />
+                            </Grid>
+                        </Frame>
+                    </toolkit:Expander.Header>
+
+                    <!-- Autocrítica -->
+                    <StackLayout>
+                        <RadioButton Value="0" Content="No he notado ningún cambio reciente en mi interés por el sexo." GroupName="interesSexoGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                        <RadioButton Value="1" Content="Estoy menos interesado en el sexo de lo que solía estarlo." GroupName="interesSexoGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                        <RadioButton Value="2" Content="Estoy mucho menos interesado en el sexo" GroupName="interesSexoGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                        <RadioButton Value="3" Content="He perdido completamente el interés en el sexo." GroupName="interesSexoGroup" CheckedChanged="RadioButton_CheckedChanged" />
+                    </StackLayout>
+                </toolkit:Expander>
+            </Grid>    
+            
+            <Grid Grid.Row="21" Padding="5">
+                 <!-- Resultado contador -->
+                 <Frame x:Name="resultFrame" BorderColor="{StaticResource tertaryColor}" CornerRadius="5" Padding="0" Grid.Row="11" HeightRequest="70" >
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                        <Grid BackgroundColor="{Binding ResultFrameBackgroundColor}" HorizontalOptions="FillAndExpand">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            
+                            <Image  Source="riesgos.png" VerticalOptions="Center" WidthRequest="35" HeightRequest="35" Margin="15,0,0,0">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer  />
+                                </Image.GestureRecognizers>
+                            </Image>
+                            
+                            <Label Text="{Binding ResultLabelText}" FontAttributes="Bold" LineBreakMode="WordWrap" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Margin="0" FontSize="Large" Grid.Column="1" TextColor="{StaticResource secondaryColor}" />
+                        </Grid>
+                        
+                        <StackLayout BackgroundColor="{StaticResource tertaryColor}" HorizontalOptions="End" VerticalOptions="FillAndExpand" Padding="10" WidthRequest="90">
+                            <Frame BackgroundColor="White" CornerRadius="5">
+                                <Label  FontAttributes="Bold" Margin="2,0,0,0" Text="{Binding Contador}" VerticalOptions="Center" HorizontalOptions="Center" TextColor="Black" FontSize="12" WidthRequest="18" HeightRequest="13" />
+                            </Frame>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </Grid>
+
+        </Grid>
+
+
+    </ScrollView>
+</ContentPage>

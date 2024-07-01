@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="SaviorIA.Views.Login"
+    BindingContext="{Binding Source={StaticResource viewModelLocator}, Path=loginViewModel}"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.NavBarIsVisible="False">
+
+
+    <Grid>
+
+        <!-- Imagen de Fondo de la página -->
+        <Image Source="login.jpg"
+            Aspect="AspectFill"
+            VerticalOptions="FillAndExpand"
+            HeightRequest="1200"
+            HorizontalOptions="FillAndExpand" />
+
+        <!-- Definicion de Grid Rows -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!-- Texto SAVIOR -->
+        <StackLayout Grid.Row="0">
+
+            <Label Text="SAVIOR"
+                FontSize="52"
+                HorizontalOptions="Center"
+                TextColor="White"
+                FontAttributes="Bold"
+                Margin="0, 0, 0, 10"
+                VerticalOptions="Start" />
+
+        </StackLayout>
+
+        <!-- Sección campos y boton inicio de sesión -->
+        <StackLayout Grid.Row="1"
+            BackgroundColor="Transparent"
+            Padding="20,0,20,40">
+
+            <!-- Correo electrónico -->
+            <Frame Margin="0,0,0,10"
+                HeightRequest="65"
+                HasShadow="True"
+                Padding="20,0,20,0"
+                HorizontalOptions="FillAndExpand">
+                <Entry Placeholder="Correo Electronico"
+                    Text="{Binding Username}"
+                    BackgroundColor="White"
+                    FontSize="17"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="CenterAndExpand" />
+            </Frame>
+
+            <!-- Contraseña con imagen al final -->
+            <Frame CornerRadius="5"
+                HasShadow="True"
+                HeightRequest="65"
+                Margin="0,0,0,10"
+                Padding="20,0,20,0">
+                <Grid>
+                    <!-- Entry principal -->
+                    <Entry Placeholder="Contraseña"
+                        x:Name="Contrasenia"
+                        Text="{Binding Password}"
+                        BackgroundColor="White"
+                        IsPassword="{Binding IsPasswordVisible}"
+                        FontSize="17"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="CenterAndExpand"
+                        Margin="0,0,32,0" />
+
+                    <!-- Icono(ver contaseña) -->
+                    <Image Source="visible.png"
+                        Aspect="AspectFit"
+                        WidthRequest="28"
+                        HeightRequest="28"
+                        VerticalOptions="Center"
+                        HorizontalOptions="End">
+
+                        <!-- Agrega GestureRecognizers para asociar un evento -->
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding VisibilityPasswwordCommand}" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Grid>
+            </Frame>
+
+            <!-- Botón iniciar sesión -->
+            <Frame CornerRadius="5"
+                HasShadow="True"
+                BackgroundColor="White"
+                Padding="0"
+                HeightRequest="68">
+                <Button Text="INICIAR SESIÓN"
+                    BackgroundColor="{StaticResource primaryColor}"
+                    TextColor="{StaticResource secondaryColor}"
+                    FontSize="20"
+                    CornerRadius="5"
+                    FontAttributes="Bold"
+                    Command="{Binding LoginCommand}" />
+            </Frame>
+        </StackLayout>
+    </Grid>
+</ContentPage>
